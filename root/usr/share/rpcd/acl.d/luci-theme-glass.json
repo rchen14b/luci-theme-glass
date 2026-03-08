@@ -1,0 +1,8 @@
+{
+    "luci-theme-glass": {
+        "description": "Grant UCI access for luci-theme-glass",
+        "read": {
+            "uci": [ "glass" ]
+        }
+    }
+}

@@ -1,0 +1,21 @@
+# Internal use
+docs/
+resources/
+
+# Hidden dotfiles/folders
+.*
+!.gitignore
+!.gitkeep
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Node modules (for LESS compilation)
+node_modules/
+package-lock.json
+
+# Screenshots (keep folder, ignore images)
+screenshots/*
+!screenshots/.gitkeep
