@@ -13,8 +13,8 @@
   <style>
     /* Demo-only styles */
     #login-view { transition: opacity 0.3s ease, transform 0.3s ease; }
-    #main-view { display: none; opacity: 0; transform: translateY(12px); transition: opacity 0.4s ease, transform 0.4s ease; }
-    #main-view.visible { opacity: 1; transform: translateY(0); }
+    #main-view { display: none; opacity: 0; transition: opacity 0.4s ease; }
+    #main-view.visible { opacity: 1; }
     .page-content { display: none; animation: page-enter 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
     .page-content.active { display: block; }
     @keyframes page-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
