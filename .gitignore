@@ -1,6 +1,6 @@
 # Internal use
 docs/
-resources/
+/resources/
 
 # Hidden dotfiles/folders
 .*
