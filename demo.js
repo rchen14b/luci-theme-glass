@@ -140,10 +140,20 @@
         /* Switch page */
         switchPage(pageId);
 
-        /* Update header title */
+        /* Update header title + reposition header slider */
         var label = item.querySelector('.nav-label');
         var title = document.getElementById('header-title');
-        if (label && title) title.textContent = label.textContent;
+        if (label && title) {
+          title.textContent = label.textContent;
+          requestAnimationFrame(function() {
+            var hdrSlider = document.querySelector('#header-nav .tab-slider');
+            var activeTab = document.querySelector('#header-nav .header-tab.active');
+            if (hdrSlider && activeTab) {
+              hdrSlider.style.left = activeTab.offsetLeft + 'px';
+              hdrSlider.style.width = activeTab.offsetWidth + 'px';
+            }
+          });
+        }
 
         /* Close sidebar on mobile */
         if (window.innerWidth <= 1024) {
@@ -209,12 +219,21 @@
         tabs.forEach(function(t) { t.classList.remove('active'); });
         tab.classList.add('active');
 
-        /* Slide header slider */
-        if (slider) {
-          slider.style.left = tab.offsetLeft + 'px';
-          slider.style.width = tab.offsetWidth + 'px';
-          slider.style.opacity = '1';
+        /* Update header title first so layout settles before slider calc */
+        var title = document.getElementById('header-title');
+        if (title) {
+          var firstLabel = document.querySelector('.nav-item[data-name="' + info.sidebar + '"] + .nav-sub .nav-item .nav-label');
+          if (firstLabel) title.textContent = firstLabel.textContent;
         }
+
+        /* Slide header slider after layout reflow */
+        requestAnimationFrame(function() {
+          if (slider) {
+            slider.style.left = tab.offsetLeft + 'px';
+            slider.style.width = tab.offsetWidth + 'px';
+            slider.style.opacity = '1';
+          }
+        });
 
         /* Open correct sidebar section */
         var parents = document.querySelectorAll('.nav-item[data-parent]');
@@ -247,13 +266,6 @@
 
         /* Switch page */
         switchPage(info.page);
-
-        /* Update header title */
-        var title = document.getElementById('header-title');
-        if (title) {
-          var firstLabel = document.querySelector('.nav-item[data-name="' + info.sidebar + '"] + .nav-sub .nav-item .nav-label');
-          if (firstLabel) title.textContent = firstLabel.textContent;
-        }
       });
     });
   }
