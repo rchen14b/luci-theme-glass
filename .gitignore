@@ -12,6 +12,9 @@ docs/
 *.swo
 *~
 
+# Build output
+dist/
+
 # Node modules (for LESS compilation)
 node_modules/
 package-lock.json
