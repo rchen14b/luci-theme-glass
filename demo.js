@@ -70,22 +70,47 @@
 
   /* ---- Logout → back to login ---- */
   function initLogout() {
-    var btn = document.getElementById('demo-logout');
-    if (!btn) return;
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      var mainView = document.getElementById('main-view');
-      var loginView = document.getElementById('login-view');
-      mainView.classList.remove('visible');
-      mainView.style.opacity = '0';
-      setTimeout(function() {
-        mainView.style.display = 'none';
-        loginView.style.display = '';
-        loginView.style.opacity = '1';
-        loginView.style.transform = '';
-        var pw = document.getElementById('luci_password');
-        if (pw) pw.focus();
-      }, 300);
+    var btns = document.querySelectorAll('[data-name="logout"]');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var mainView = document.getElementById('main-view');
+        var loginView = document.getElementById('login-view');
+        mainView.classList.remove('visible');
+        mainView.style.opacity = '0';
+        setTimeout(function() {
+          mainView.style.display = 'none';
+          loginView.style.display = '';
+          loginView.style.opacity = '1';
+          loginView.style.transform = '';
+          var pw = document.getElementById('luci_password');
+          if (pw) pw.focus();
+        }, 300);
+      });
+    });
+  }
+
+  /* ---- Switch sidebar to show only active category's nav-group ---- */
+  function switchSidebarCategory(cat) {
+    var groups = document.querySelectorAll('.nav-group[data-category]');
+    groups.forEach(function(g) {
+      if (g.dataset.category === cat) {
+        g.style.display = '';
+        /* Position slider on first active item */
+        requestAnimationFrame(function() {
+          var active = g.querySelector('.nav-item.active');
+          var slider = g.querySelector('.nav-slider');
+          if (active && slider) {
+            slider.style.transition = 'none';
+            slider.style.top = active.offsetTop + 'px';
+            slider.style.height = active.offsetHeight + 'px';
+            slider.style.opacity = '1';
+            requestAnimationFrame(function() { slider.style.transition = ''; });
+          }
+        });
+      } else {
+        g.style.display = 'none';
+      }
     });
   }
 
@@ -103,18 +128,12 @@
     overlay.addEventListener('click', close);
   }
 
-  /* ---- Sidebar nav — expand/collapse + sliding selector ---- */
+  /* ---- Sidebar nav — sub-item clicks with sliding selector ---- */
   function initSidebarNav() {
+    /* Parent items — prevent default (no expand/collapse needed, always open) */
     var parents = document.querySelectorAll('.nav-item[data-parent]');
     parents.forEach(function(item) {
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-        var sub = item.nextElementSibling;
-        if (!sub || !sub.classList.contains('nav-sub')) return;
-        var isOpen = item.classList.contains('open');
-        item.classList.toggle('open', !isOpen);
-        sub.classList.toggle('open', !isOpen);
-      });
+      item.addEventListener('click', function(e) { e.preventDefault(); });
     });
 
     /* Sub-item clicks — slide indicator + switch page */
@@ -125,8 +144,9 @@
         var pageId = item.dataset.page;
         if (!pageId) return;
 
-        /* Update active states */
-        document.querySelectorAll('.nav-sub .nav-item.active').forEach(function(a) { a.classList.remove('active'); });
+        /* Update active states within this group */
+        var group = item.closest('.nav-group');
+        if (group) group.querySelectorAll('.nav-sub .nav-item.active').forEach(function(a) { a.classList.remove('active'); });
         item.classList.add('active');
 
         /* Slide nav-slider */
@@ -139,21 +159,6 @@
 
         /* Switch page */
         switchPage(pageId);
-
-        /* Update header title + reposition header slider */
-        var label = item.querySelector('.nav-label');
-        var title = document.getElementById('header-title');
-        if (label && title) {
-          title.textContent = label.textContent;
-          requestAnimationFrame(function() {
-            var hdrSlider = document.querySelector('#header-nav .tab-slider');
-            var activeTab = document.querySelector('#header-nav .header-tab.active');
-            if (hdrSlider && activeTab) {
-              hdrSlider.style.left = activeTab.offsetLeft + 'px';
-              hdrSlider.style.width = activeTab.offsetWidth + 'px';
-            }
-          });
-        }
 
         /* Close sidebar on mobile */
         if (window.innerWidth <= 1024) {
@@ -226,43 +231,15 @@
           if (firstLabel) title.textContent = firstLabel.textContent;
         }
 
-        /* Slide header slider after layout reflow */
-        requestAnimationFrame(function() {
-          if (slider) {
-            slider.style.left = tab.offsetLeft + 'px';
-            slider.style.width = tab.offsetWidth + 'px';
-            slider.style.opacity = '1';
-          }
-        });
+        /* Slide header slider */
+        if (slider) {
+          slider.style.left = tab.offsetLeft + 'px';
+          slider.style.width = tab.offsetWidth + 'px';
+          slider.style.opacity = '1';
+        }
 
-        /* Open correct sidebar section */
-        var parents = document.querySelectorAll('.nav-item[data-parent]');
-        parents.forEach(function(p) {
-          var sub = p.nextElementSibling;
-          if (p.dataset.name === info.sidebar) {
-            p.classList.add('open');
-            if (sub) sub.classList.add('open');
-            /* Activate first sub-item */
-            if (sub) {
-              var items = sub.querySelectorAll('.nav-item');
-              document.querySelectorAll('.nav-sub .nav-item.active').forEach(function(a) { a.classList.remove('active'); });
-              if (items.length > 0) {
-                items[0].classList.add('active');
-                var sl = sub.querySelector('.nav-slider');
-                if (sl) {
-                  requestAnimationFrame(function() {
-                    sl.style.top = items[0].offsetTop + 'px';
-                    sl.style.height = items[0].offsetHeight + 'px';
-                    sl.style.opacity = '1';
-                  });
-                }
-              }
-            }
-          } else {
-            p.classList.remove('open');
-            if (sub) sub.classList.remove('open');
-          }
-        });
+        /* Switch sidebar to show only this category */
+        switchSidebarCategory(cat);
 
         /* Switch page */
         switchPage(info.page);
