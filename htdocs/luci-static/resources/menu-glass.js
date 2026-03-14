@@ -301,7 +301,7 @@ return baseclass.extend({
 	},
 
 	renderTabMenu: function(tree, url, level) {
-		var container = document.getElementById('header-tabs');
+		var container = document.getElementById('header-sub');
 		if (!container) return E([]);
 
 		var children = ui.menu.getChildren(tree);
@@ -310,21 +310,21 @@ return baseclass.extend({
 		if (children.length == 0)
 			return E([]);
 
-		/* Add separator before tab group */
-		container.appendChild(E('span', { 'class': 'header-sep' }));
-
 		for (var i = 0; i < children.length; i++) {
 			var child = children[i];
 			var isActive = L.env.dispatchpath[3 + (level || 0)] == child.name;
 
 			container.appendChild(E('a', {
-				'class': 'header-tab' + (isActive ? ' active' : ''),
+				'class': 'sub-tab' + (isActive ? ' active' : ''),
 				'href': L.url(url, child.name)
 			}, [ _(child.title) ]));
 
 			if (isActive)
 				activeNode = child;
 		}
+
+		container.classList.add('active');
+		document.body.classList.add('has-sub-nav');
 
 		/* Add sliding selector */
 		this.addTabSlider(container, true);

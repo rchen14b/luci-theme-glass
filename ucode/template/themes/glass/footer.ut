@@ -5,7 +5,7 @@
 </main>
 
 <footer class="glass-footer">
-  <span>GlassTheme v1.0.3</span>
+  <span>GlassTheme v1.0.4</span>
   <span class="footer-sep">|</span>
   <a href="https://github.com/openwrt/luci" target="_blank">{{ version.luciname }} ({{ version.luciversion }})</a>
   <span class="footer-sep">|</span>
@@ -86,10 +86,44 @@
         }
       }
 
-      /* Move CBI tabmenus (.cbi-tabmenu) into sub-nav bar */
+      /* Move top-level CBI tabmenus into sub-nav bar.
+         Skip if renderTabMenu already populated header-sub (menu-tree tabs).
+         Nested tabmenus (e.g. DNS Records sub-tabs inside a tab panel)
+         stay in-content so they don't get mixed with top-level tabs. */
       if (!headerSub) return;
-      var tabmenus = content.querySelectorAll('.cbi-tabmenu');
-      if (tabmenus.length === 0) return;
+      if (headerSub.querySelector('.sub-tab')) return; /* Already has menu-tree tabs */
+      var allTabmenus = content.querySelectorAll('.cbi-tabmenu');
+      if (allTabmenus.length === 0) return;
+
+      /* Filter: exclude tabmenus nested inside a tab panel whose parent
+         section already has a multi-tab tabmenu (e.g. DNS Records sub-tabs).
+         Include tabmenus inside single-tab wrappers (e.g. Firewall). */
+      function isDeeplyNested(ul) {
+        var tabbed = ul.closest('.cbi-section-node-tabbed');
+        if (!tabbed) return false;
+        var parent = tabbed.parentElement;
+        if (!parent) return false;
+        /* Check if a sibling .cbi-tabmenu in the same section has 2+ visible tabs */
+        var kids = parent.children;
+        for (var j = 0; j < kids.length; j++) {
+          if (kids[j].classList && kids[j].classList.contains('cbi-tabmenu')) {
+            var visible = 0;
+            var lis = kids[j].querySelectorAll('li');
+            for (var k = 0; k < lis.length; k++) {
+              if (lis[k].style.display !== 'none') visible++;
+            }
+            if (visible >= 2) return true;
+          }
+        }
+        return false;
+      }
+      var topTabmenus = [];
+      for (var i = 0; i < allTabmenus.length; i++) {
+        if (!isDeeplyNested(allTabmenus[i])) {
+          topTabmenus.push(allTabmenus[i]);
+        }
+      }
+      if (topTabmenus.length === 0) return;
 
       /* Skip rebuild if we're in the middle of a tab click */
       if (headerSub._switching) return;
@@ -104,11 +138,13 @@
       slider.className = 'tab-slider';
       headerSub.appendChild(slider);
 
-      tabmenus.forEach(function(ul) {
+      topTabmenus.forEach(function(ul) {
         var items = ul.querySelectorAll('li');
         items.forEach(function(li) {
           var a = li.querySelector('a');
           if (!a) return;
+          /* Skip hidden tabs (e.g. DNSSEC when not available) */
+          if (li.style.display === 'none') return;
           var tab = a.cloneNode(true);
           tab.className = 'sub-tab' + (li.classList.contains('cbi-tab') ? ' active' : '');
           tab.addEventListener('click', function(ev) {
@@ -130,9 +166,10 @@
         });
 
         ul.style.display = 'none';
-        headerSub.classList.add('active');
-        document.body.classList.add('has-sub-nav');
       });
+
+      headerSub.classList.add('active');
+      document.body.classList.add('has-sub-nav');
 
       /* Position slider on active sub-tab */
       requestAnimationFrame(function() {
@@ -149,23 +186,9 @@
       });
     }
 
-    function hideUpgradeCheck() {
-      var inputs = content.querySelectorAll('input[type="checkbox"]');
-      inputs.forEach(function(inp) {
-        var wrapper = inp.parentElement;
-        if (wrapper && wrapper.parentElement &&
-            !wrapper.className && !wrapper.parentElement.className &&
-            wrapper.textContent.indexOf('upgrade') !== -1) {
-          wrapper.parentElement.style.display = 'none';
-        }
-      });
-    }
-
     processContent();
-    hideUpgradeCheck();
     new MutationObserver(function() {
       processContent();
-      hideUpgradeCheck();
     }).observe(content, { childList: true, subtree: true });
   })();
 </script>

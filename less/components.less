@@ -9,6 +9,18 @@
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
   position: relative;
+
+  /* Nested sections — flatten (no extra box/padding) */
+  .cbi-section {
+    padding: 0;
+    margin-bottom: 0;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
 }
 
 .cbi-section-descr {
@@ -616,8 +628,15 @@ table.cbi-section-table {
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
   margin-bottom: var(--space-lg);
+  background: rgba(90, 200, 250, 0.08);
+  border: 0.5px solid rgba(90, 200, 250, 0.20);
+  color: var(--color-info);
   backdrop-filter: blur(10px) saturate(180%);
   -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    inset 0 0 6px rgba(255, 255, 255, 0.08);
 }
 
 .alert-message.notice,
@@ -713,7 +732,19 @@ input[type="radio"] {
 
 /* ---- Spinning indicator ---- */
 .spinning {
-  animation: spin 1s linear infinite;
+  position: relative;
+  padding-left: 32px !important;
+}
+
+.spinning::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.2em;
+  width: 32px;
+  content: "";
+  background: url(/luci-static/resources/icons/loading.svg) no-repeat center;
+  background-size: 16px;
 }
 
 @keyframes spin {

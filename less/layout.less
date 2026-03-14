@@ -651,9 +651,16 @@ html[data-theme="dark"] .theme-icon-dark {
   animation: page-enter 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Hide LuCI's "Loading view..." spinner */
+/* Style LuCI's "Loading view..." spinner as a centered glass card */
 #view > .spinning {
-  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: var(--radius-lg);
+  .glass-effect();
+  z-index: 100;
 }
 
 /* Fade-out before navigation */

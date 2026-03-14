@@ -717,9 +717,20 @@ html[data-theme="dark"] .theme-icon-dark {
 #view > :not(.spinning) {
   animation: page-enter 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-/* Hide LuCI's "Loading view..." spinner */
+/* Style LuCI's "Loading view..." spinner as a centered glass card */
 #view > .spinning {
-  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 0.5px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  z-index: 100;
 }
 /* Fade-out before navigation */
 body.page-leaving #content-wrap {
@@ -799,6 +810,17 @@ body.has-sub-nav #content-wrap {
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
   position: relative;
+  /* Nested sections — flatten (no extra box/padding) */
+}
+.cbi-section .cbi-section {
+  padding: 0;
+  margin-bottom: 0;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 .cbi-section-descr {
   color: var(--color-text-secondary);
@@ -1304,8 +1326,12 @@ table.cbi-section-table .tr:hover .td {
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
   margin-bottom: var(--space-lg);
+  background: rgba(90, 200, 250, 0.08);
+  border: 0.5px solid rgba(90, 200, 250, 0.2);
+  color: var(--color-info);
   backdrop-filter: blur(10px) saturate(180%);
   -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 0 6px rgba(255, 255, 255, 0.08);
 }
 .alert-message.notice,
 .alert-message.info {
@@ -1373,7 +1399,18 @@ input[type="radio"] {
 }
 /* ---- Spinning indicator ---- */
 .spinning {
-  animation: spin 1s linear infinite;
+  position: relative;
+  padding-left: 32px !important;
+}
+.spinning::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.2em;
+  width: 32px;
+  content: "";
+  background: url(/luci-static/resources/icons/loading.svg) no-repeat center;
+  background-size: 16px;
 }
 @keyframes spin {
   from {
@@ -1832,8 +1869,8 @@ div[style*="display:grid;grid-template-columns:repeat"] > .ifacebox > .ifacebox-
   background: rgba(0, 0, 0, 0.04);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
-  max-height: calc(100vh - 350px);
-  overflow-y: auto;
+  overflow-y: hidden;
+  width: 100%;
   white-space: pre-wrap;
   word-break: break-all;
 }
@@ -1890,9 +1927,14 @@ pre {
 #cbi_apply_overlay .spinning {
   width: 40px;
   height: 40px;
+  padding-left: 0 !important;
   border: 3px solid var(--color-bg-secondary);
   border-top-color: var(--color-primary);
   border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+#cbi_apply_overlay .spinning::before {
+  display: none;
 }
 /* ---- Utility classes ---- */
 .nowrap {

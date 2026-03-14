@@ -264,8 +264,8 @@ div[style*="display:grid;grid-template-columns:repeat"] {
   background: rgba(0, 0, 0, 0.04);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
-  max-height: calc(100vh - 350px);
-  overflow-y: auto;
+  overflow-y: hidden;
+  width: 100%;
   white-space: pre-wrap;
   word-break: break-all;
 }
@@ -350,9 +350,15 @@ pre {
 #cbi_apply_overlay .spinning {
   width: 40px;
   height: 40px;
+  padding-left: 0 !important;
   border: 3px solid var(--color-bg-secondary);
   border-top-color: var(--color-primary);
   border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+  &::before {
+    display: none;
+  }
 }
 
 /* ---- Utility classes ---- */

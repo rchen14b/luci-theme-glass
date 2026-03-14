@@ -48,6 +48,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="theme-color" id="meta-theme-color" content="{{ glass_mode == 'dark' ? '#2c2e3a' : '#f5f5f7' }}">
   <title>{{ _('Login') }} - {{ hostname }} - LuCI</title>
+  <link rel="icon" href="{{ media }}/img/glass-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{{ media }}/css/cascade.css">
   <style id="dark-styles" media="{% if (glass_mode == 'dark'): %}all{% elif (glass_mode == 'light'): %}not all{% else %}(prefers-color-scheme: dark){% endif %}">
     {{ dark_css }}
