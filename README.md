@@ -79,7 +79,7 @@ wget -O /etc/apk/keys/glass-apk.rsa.pub \
   https://raw.githubusercontent.com/rchen14b/luci-theme-glass/main/root/etc/apk/keys/glass-apk.rsa.pub
 
 # Add feed and install
-echo "https://rchen14b.github.io/luci-theme-glass/apk/packages.adb" > /etc/apk/repositories.d/glass.list
+echo "https://rchen14b.github.io/luci-theme-glass/apk/packages.adb" > /etc/apk/repositories.d/customfeeds.list
 apk update
 apk add luci-theme-glass
 ```
