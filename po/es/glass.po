@@ -12,24 +12,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 3.8\n"
 
-#: htdocs/luci-static/resources/view/system/glass.js:44
+#: htdocs/luci-static/resources/view/system/glass.js:52
 msgid "Accent Colors"
 msgstr "Colores de acento"
 
-#: htdocs/luci-static/resources/view/system/glass.js:64
+#: htdocs/luci-static/resources/view/system/glass.js:72
 msgid "Accent color used for active elements, links, and buttons in dark mode."
 msgstr ""
 "Color de acento utilizado para elementos activos, enlaces y botones en el "
 "modo oscuro."
 
-#: htdocs/luci-static/resources/view/system/glass.js:48
+#: htdocs/luci-static/resources/view/system/glass.js:56
 msgid ""
 "Accent color used for active elements, links, and buttons in light mode."
 msgstr ""
 "Color de acento utilizado para elementos activos, enlaces y botones en el "
 "modo claro."
 
-#: htdocs/luci-static/resources/view/system/glass.js:120
+#: htdocs/luci-static/resources/view/system/glass.js:128
 msgid "Active"
 msgstr "Activo"
 
@@ -37,11 +37,11 @@ msgstr "Activo"
 msgid "Auto (follow system)"
 msgstr "Automático (seguir el del sistema)"
 
-#: htdocs/luci-static/resources/view/system/glass.js:100
+#: htdocs/luci-static/resources/view/system/glass.js:108
 msgid "Backdrop blur radius for glass panels in dark mode."
 msgstr "Radio de desenfoque del fondo para paneles de cristal en modo oscuro."
 
-#: htdocs/luci-static/resources/view/system/glass.js:84
+#: htdocs/luci-static/resources/view/system/glass.js:92
 msgid ""
 "Backdrop blur radius for glass panels. Higher values create a more frosted "
 "appearance."
@@ -49,18 +49,18 @@ msgstr ""
 "Radio de desenfoque del fondo para paneles de cristal. Los valores más altos "
 "crean una apariencia más esmerilada."
 
-#: htdocs/luci-static/resources/view/system/glass.js:112
+#: htdocs/luci-static/resources/view/system/glass.js:120
 msgid "Background"
 msgstr "Fondo"
 
-#: htdocs/luci-static/resources/view/system/glass.js:90
+#: htdocs/luci-static/resources/view/system/glass.js:98
 msgid ""
 "Background opacity of glass panels (0 = fully transparent, 1 = fully opaque)."
 msgstr ""
 "Opacidad de fondo de los paneles de cristal (0 = totalmente transparente, 1 "
 "= totalmente opaco)."
 
-#: htdocs/luci-static/resources/view/system/glass.js:106
+#: htdocs/luci-static/resources/view/system/glass.js:114
 msgid ""
 "Background opacity of glass panels in dark mode (0 = fully transparent, 1 = "
 "fully opaque)."
@@ -68,8 +68,12 @@ msgstr ""
 "Opacidad de fondo de los paneles de cristal en modo oscuro (0 = totalmente "
 "transparente, 1 = totalmente opaco)."
 
-#: htdocs/luci-static/resources/view/system/glass.js:83
-#: htdocs/luci-static/resources/view/system/glass.js:99
+#: htdocs/luci-static/resources/view/system/glass.js:43
+msgid "Base font size"
+msgstr "Tamaño de fuente base"
+
+#: htdocs/luci-static/resources/view/system/glass.js:91
+#: htdocs/luci-static/resources/view/system/glass.js:107
 msgid "Blur intensity (px)"
 msgstr "Intensidad del desenfoque (px)"
 
@@ -88,7 +92,7 @@ msgstr ""
 "Controla la apariencia general. La opción «Normal» respeta la preferencia "
 "del sistema."
 
-#: htdocs/luci-static/resources/view/system/glass.js:115
+#: htdocs/luci-static/resources/view/system/glass.js:123
 msgid "Current background"
 msgstr "Fondo actual"
 
@@ -96,15 +100,19 @@ msgstr "Fondo actual"
 msgid "Dark"
 msgstr "Oscuro"
 
+#: htdocs/luci-static/resources/view/system/glass.js:48
+msgid "Extra Large (18px)"
+msgstr "Extra grande (18px)"
+
 #: htdocs/luci-static/resources/view/system/glass.js:28
 msgid "General"
 msgstr "General"
 
-#: htdocs/luci-static/resources/view/system/glass.js:96
+#: htdocs/luci-static/resources/view/system/glass.js:104
 msgid "Glass Effects — Dark Mode"
 msgstr "Efectos de vidrio - Modo oscuro"
 
-#: htdocs/luci-static/resources/view/system/glass.js:80
+#: htdocs/luci-static/resources/view/system/glass.js:88
 msgid "Glass Effects — Light Mode"
 msgstr "Efectos de vidrio - Modo claro"
 
@@ -116,7 +124,7 @@ msgstr "Tema Glass"
 msgid "Glass Theme Config"
 msgstr "Configuración de Glass"
 
-#: ucode/template/themes/glass/header.ut:199
+#: ucode/template/themes/glass/header.ut:204
 msgid "Go to password configuration..."
 msgstr "Ir a la configuración de contraseñas..."
 
@@ -132,9 +140,13 @@ msgstr "Barra de estado del encabezado"
 msgid "Invalid username and/or password! Please try again."
 msgstr "Nombre de usuario y/o contraseña incorrectos. Inténtelo de nuevo."
 
-#: ucode/template/themes/glass/header.ut:206
+#: ucode/template/themes/glass/header.ut:211
 msgid "JavaScript required!"
 msgstr "¡Se requiere JavaScript!"
+
+#: htdocs/luci-static/resources/view/system/glass.js:47
+msgid "Large (16px)"
+msgstr "Grande (16px)"
 
 #: htdocs/luci-static/resources/view/system/glass.js:34
 msgid "Light"
@@ -148,7 +160,7 @@ msgstr "Iniciar sesión"
 msgid "Login"
 msgstr "Acceso"
 
-#: htdocs/luci-static/resources/view/system/glass.js:123
+#: htdocs/luci-static/resources/view/system/glass.js:131
 msgid ""
 "No background set. Upload an image or video named \"bg\" (e.g. bg.jpg, "
 "bg.png, bg.mp4) to /www/luci-static/glass/background/ via SCP."
@@ -157,12 +169,16 @@ msgstr ""
 "(por ejemplo, bg.jpg, bg.png, bg.mp4) a /www/luci-static/glass/background/ a "
 "través de SCP."
 
-#: ucode/template/themes/glass/header.ut:196
+#: ucode/template/themes/glass/header.ut:201
 msgid "No password set!"
 msgstr "¡No se ha establecido ninguna contraseña!"
 
-#: htdocs/luci-static/resources/view/system/glass.js:89
-#: htdocs/luci-static/resources/view/system/glass.js:105
+#: htdocs/luci-static/resources/view/system/glass.js:46
+msgid "Normal (14px)"
+msgstr "Normal (14px)"
+
+#: htdocs/luci-static/resources/view/system/glass.js:97
+#: htdocs/luci-static/resources/view/system/glass.js:113
 msgid "Panel transparency"
 msgstr "Transparencia del panel"
 
@@ -170,13 +186,21 @@ msgstr "Transparencia del panel"
 msgid "Password"
 msgstr "Contraseña"
 
-#: htdocs/luci-static/resources/view/system/glass.js:63
+#: htdocs/luci-static/resources/view/system/glass.js:71
 msgid "Primary color (dark mode)"
 msgstr "Color principal (modo oscuro)"
 
-#: htdocs/luci-static/resources/view/system/glass.js:47
+#: htdocs/luci-static/resources/view/system/glass.js:55
 msgid "Primary color (light mode)"
 msgstr "Color principal (modo claro)"
+
+#: htdocs/luci-static/resources/view/system/glass.js:44
+msgid ""
+"Scales all text in the theme. Larger values improve readability on high-DPI "
+"displays."
+msgstr ""
+"Ajusta el tamaño de todo el texto del tema. Los valores mayores mejoran la "
+"legibilidad en pantallas de alta resolución."
 
 #: htdocs/luci-static/resources/view/system/glass.js:39
 msgid ""
@@ -191,11 +215,15 @@ msgstr ""
 msgid "Sign in to continue"
 msgstr "Inicia sesión para continuar"
 
+#: htdocs/luci-static/resources/view/system/glass.js:45
+msgid "Small (13px)"
+msgstr "Pequeño (13px)"
+
 #: htdocs/luci-static/resources/view/system/glass.js:31
 msgid "Theme mode"
 msgstr "Modo del tema"
 
-#: ucode/template/themes/glass/header.ut:197
+#: ucode/template/themes/glass/header.ut:202
 msgid ""
 "There is no password set on this router. Please configure a root password to "
 "protect the web interface."
@@ -207,8 +235,8 @@ msgstr ""
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: ucode/template/themes/glass/header.ut:207
+#: ucode/template/themes/glass/header.ut:212
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr ""
-"Debes activar JavaScript en tu navegador o LuCI no funcionará correctamente."
+"Debe activar JavaScript en su navegador o LuCI no funcionará correctamente."
