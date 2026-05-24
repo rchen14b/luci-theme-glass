@@ -146,6 +146,169 @@ msgstr ""
 "未设置背景。请通过 SCP 将名为 \"bg\" 的图片或视频（如 bg.jpg、bg.png、"
 "bg.mp4）上传至 /www/luci-static/glass/background/。"
 
+#: htdocs/luci-static/resources/view/system/glass.js:180
+msgid ""
+"No background set. Select a wallpaper from the online gallery below, or "
+"upload a custom image via SCP to /www/luci-static/glass/background/"
+msgstr ""
+"未设置背景。从下方的在线壁纸库中选择，或通过 SCP 上传自定义图片到 "
+"/www/luci-static/glass/background/"
+
+#: htdocs/luci-static/resources/view/system/glass.js:187
+msgid "Online Wallpaper Gallery"
+msgstr "在线壁纸库"
+
+msgid "Wallpaper source"
+msgstr "壁纸源"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "选择在线壁纸源。每个来源提供不同风格的壁纸。"
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum（随机照片）"
+
+msgid "Iciba Daily (China)"
+msgstr "金山词霸每日壁纸（中国）"
+
+msgid "Wallpaper count"
+msgstr "壁纸数量"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "显示的壁纸数量（4-16，默认：8）。更改后需刷新页面生效。"
+
+#: htdocs/luci-static/resources/view/system/glass.js:238
+msgid "All"
+msgstr "全部"
+
+#: htdocs/luci-static/resources/view/system/glass.js:253
+msgid "No wallpapers available in this category"
+msgstr "该分类下没有可用壁纸"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Nature Landscape"
+msgstr "自然风光"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Mountain View"
+msgstr "山景"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Abstract Light"
+msgstr "抽象光效"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Abstract Dark"
+msgstr "深色抽象"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Technology"
+msgstr "科技"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Minimal"
+msgstr "极简"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Blue Gradient"
+msgstr "蓝色渐变"
+
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Purple Gradient"
+msgstr "紫色渐变"
+
+#: htdocs/luci-static/resources/view/system/glass.js:239
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Nature"
+msgstr "自然"
+
+#: htdocs/luci-static/resources/view/system/glass.js:239
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Abstract"
+msgstr "抽象"
+
+#: htdocs/luci-static/resources/view/system/glass.js:239
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Technology"
+msgstr "科技"
+
+#: htdocs/luci-static/resources/view/system/glass.js:239
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Minimal"
+msgstr "极简"
+
+#: htdocs/luci-static/resources/view/system/glass.js:239
+#: htdocs/luci-static/resources/view/system/glass.js:270
+msgid "Gradient"
+msgstr "渐变"
+
+msgid "Next Batch"
+msgstr "下一批"
+
+#: htdocs/luci-static/resources/view/system/glass.js:276
+msgid "Active"
+msgstr "当前使用"
+
+#: htdocs/luci-static/resources/view/system/glass.js:283
+msgid "Apply"
+msgstr "应用"
+
+#: htdocs/luci-static/resources/view/system/glass.js:283
+msgid "Re-apply"
+msgstr "重新应用"
+
+#: htdocs/luci-static/resources/view/system/glass.js:294
+msgid "Custom URL"
+msgstr "自定义 URL"
+
+#: htdocs/luci-static/resources/view/system/glass.js:297
+msgid "Download & Apply"
+msgstr "下载并应用"
+
+#: htdocs/luci-static/resources/view/system/glass.js:300
+msgid "Enter a direct image URL to download and apply as background"
+msgstr "输入图片直链地址来下载并应用为背景"
+
+#: htdocs/luci-static/resources/view/system/glass.js:176
+msgid "Remove Background"
+msgstr "移除背景"
+
+#: htdocs/luci-static/resources/view/system/glass.js:358
+msgid "Downloading..."
+msgstr "下载中..."
+
+#: htdocs/luci-static/resources/view/system/glass.js:363
+msgid "Wallpaper applied successfully. Refresh the page to see the changes."
+msgstr "壁纸应用成功。刷新页面以查看更改。"
+
+#: htdocs/luci-static/resources/view/system/glass.js:365
+#: htdocs/luci-static/resources/view/system/glass.js:373
+msgid "Failed to download wallpaper"
+msgstr "下载壁纸失败"
+
+#: htdocs/luci-static/resources/view/system/glass.js:367
+msgid "Download failed"
+msgstr "下载失败"
+
+#: htdocs/luci-static/resources/view/system/glass.js:380
+msgid "Download failed: "
+msgstr "下载失败："
+
+#: htdocs/luci-static/resources/view/system/glass.js:390
+msgid "Remove current background?"
+msgstr "确定移除当前背景？"
+
+#: htdocs/luci-static/resources/view/system/glass.js:396
+msgid "Background removed. Refresh the page to see the changes."
+msgstr "背景已移除。刷新页面以查看更改。"
+
+#: htdocs/luci-static/resources/view/system/glass.js:398
+msgid "Failed to remove background"
+msgstr "移除背景失败"
+
+#: htdocs/luci-static/resources/view/system/glass.js:406
+msgid "Remove failed: "
+msgstr "移除失败："
+
 #: ucode/template/themes/glass/header.ut:201
 msgid "No password set!"
 msgstr "未设置密码！"
@@ -209,3 +372,29 @@ msgstr "用户名"
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr "请在浏览器中启用 JavaScript，否则 LuCI 无法正常工作。"
+
+#: htdocs/luci-static/resources/view/system/glass.js:240
+msgid "Enable wallpaper"
+msgstr "启用壁纸"
+
+#: htdocs/luci-static/resources/view/system/glass.js:263
+msgid "Background blur (px)"
+msgstr "背景模糊 (px)"
+
+#: htdocs/luci-static/resources/view/system/glass.js:264
+msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)."
+msgstr "背景壁纸模糊效果（0 = 无模糊，50 = 最大模糊）。"
+
+#: htdocs/luci-static/resources/view/system/glass.js:380
+msgid "Source:"
+msgstr "源地址："
+
+#: htdocs/luci-static/resources/view/system/glass.js:434
+msgid "No wallpapers available in this category"
+msgstr "该分类下没有可用壁纸"
+
+#: htdocs/luci-static/resources/view/system/glass.js:241
+msgid ""
+"Enable or disable the wallpaper feature. When disabled, no background image "
+"will be shown."
+msgstr "启用或禁用壁纸功能。禁用时，将不显示背景图片。"

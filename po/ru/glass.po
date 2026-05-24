@@ -209,3 +209,60 @@ msgstr "Имя пользователя"
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr "Необходимо включить JavaScript в браузере, иначе LuCI не будет работать корректно."
+
+msgid "Wallpaper source"
+msgstr "Источник обоев"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "Выберите источник обоев онлайн. Каждый источник предоставляет обои в разных стилях."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (Случайные фото)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (Китай)"
+
+msgid "Wallpaper count"
+msgstr "Количество обоев"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "Количество обоев для отображения (4-16, по умолчанию: 8). Изменения вступают в силу после обновления страницы."
+
+msgid "Next Batch"
+msgstr "Следующая партия"
+
+msgid "Wallpaper source"
+msgstr "Источник обоев"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "Выберите источник обоев онлайн. Каждый источник предоставляет обои в разных стилях."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (Случайные фото)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (Китай)"
+
+msgid "Wallpaper count"
+msgstr "Количество обоев"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "Количество обоев для отображения (4-16, по умолчанию: 8). Изменения вступают в силу после обновления."
+
+msgid "Next Batch"
+msgstr "Следующая партия"
+
+msgid "Enable wallpaper"
+msgstr "Enable wallpaper"
+
+msgid "Background blur (px)"
+msgstr "Background blur (px)"
+
+msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+msgstr "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "No wallpapers available in this category"
+msgstr "No wallpapers available in this category"

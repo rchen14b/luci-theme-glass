@@ -209,3 +209,60 @@ msgstr "사용자 이름"
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr "브라우저에서 JavaScript를 활성화해야 LuCI가 정상적으로 작동합니다."
+
+msgid "Wallpaper source"
+msgstr "배경화면 출처"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "온라인 배경화면 출처를 선택하세요. 각 출처는 다른 스타일의 배경화면을 제공합니다."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (무작위 사진)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (중국)"
+
+msgid "Wallpaper count"
+msgstr "배경화면 수"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "표시할 배경화면 수 (4-16, 기본값: 8). 변경 사항은 페이지를 새로고침한 후에 적용됩니다."
+
+msgid "Next Batch"
+msgstr "다음 배치"
+
+msgid "Wallpaper source"
+msgstr "배경화면 출처"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "온라인 배경화면 출처를 선택하세요. 각 출처는 다른 스타일의 배경화면을 제공합니다."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (무작위 사진)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (중국)"
+
+msgid "Wallpaper count"
+msgstr "배경화면 수"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "표시할 배경화면 수 (4-16, 기본값: 8). 변경 사항은 페이지를 새로고침한 후에 적용됩니다."
+
+msgid "Next Batch"
+msgstr "다음 배치"
+
+msgid "Enable wallpaper"
+msgstr "Enable wallpaper"
+
+msgid "Background blur (px)"
+msgstr "Background blur (px)"
+
+msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+msgstr "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "No wallpapers available in this category"
+msgstr "No wallpapers available in this category"

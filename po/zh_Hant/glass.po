@@ -209,3 +209,60 @@ msgstr "使用者名稱"
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr "必須在瀏覽器中啟用 JavaScript，否則 LuCI 無法正常運作。"
+
+msgid "Wallpaper source"
+msgstr "壁紙源"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "選擇在線壁紙源。每個來源提供不同風格的壁紙。"
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum（隨機照片）"
+
+msgid "Iciba Daily (China)"
+msgstr "金山词霸每日壁紙（中國）"
+
+msgid "Wallpaper count"
+msgstr "壁紙數量"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "顯示的壁紙數量（4-16，默認：8）。更改後需刷新頁面生效。"
+
+msgid "Next Batch"
+msgstr "下一批"
+
+msgid "Wallpaper source"
+msgstr "壁紙源"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "選擇在線壁紙源。每個來源提供不同風格的壁紙。"
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum（隨機照片）"
+
+msgid "Iciba Daily (China)"
+msgstr "金山词霸每日壁紙（中國）"
+
+msgid "Wallpaper count"
+msgstr "壁紙數量"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "顯示的壁紙數量（4-16，默認：8）。更改後需刷新頁面生效。"
+
+msgid "Next Batch"
+msgstr "下一批"
+
+msgid "Enable wallpaper"
+msgstr "Enable wallpaper"
+
+msgid "Background blur (px)"
+msgstr "Background blur (px)"
+
+msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+msgstr "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "No wallpapers available in this category"
+msgstr "No wallpapers available in this category"

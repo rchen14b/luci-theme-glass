@@ -209,3 +209,60 @@ msgstr "Nome de usuário"
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr "Você deve habilitar JavaScript no navegador ou o LuCI não funcionará corretamente."
+
+msgid "Wallpaper source"
+msgstr "Fonte do papel de parede"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "Selecione a fonte do papel de parede online. Cada fonte fornece diferentes estilos."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (Fotos aleatórias)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (China)"
+
+msgid "Wallpaper count"
+msgstr "Quantidade de papéis de parede"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "Número de papéis de parede para exibir (4-16, padrão: 8). As alterações entram em vigor após atualizar a página."
+
+msgid "Next Batch"
+msgstr "Próximo lote"
+
+msgid "Wallpaper source"
+msgstr "Fonte do papel de parede"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "Selecione a fonte do papel de parede online. Cada fonte fornece diferentes estilos."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (Fotos aleatórias)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (China)"
+
+msgid "Wallpaper count"
+msgstr "Quantidade de papéis de parede"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "Número de papéis de parede para exibir (4-16, padrão: 8). As alterações entram em vigor após atualizar."
+
+msgid "Next Batch"
+msgstr "Próximo lote"
+
+msgid "Enable wallpaper"
+msgstr "Enable wallpaper"
+
+msgid "Background blur (px)"
+msgstr "Background blur (px)"
+
+msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+msgstr "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "No wallpapers available in this category"
+msgstr "No wallpapers available in this category"

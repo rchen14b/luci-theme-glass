@@ -209,3 +209,60 @@ msgstr "ユーザー名"
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr "ブラウザーでJavaScriptを有効にしないと、LuCIが正常に動作しません。"
+
+msgid "Wallpaper source"
+msgstr "壁紙ソース"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "オンライン壁紙ソースを選択してください。各ソースは異なるスタイルの壁紙を提供します。"
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum（ランダム写真）"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily（中国）"
+
+msgid "Wallpaper count"
+msgstr "壁紙数"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "表示する壁紙の数（4-16、デフォルト：8）。変更はページを更新した後に有効になります。"
+
+msgid "Next Batch"
+msgstr "次のバッチ"
+
+msgid "Wallpaper source"
+msgstr "壁紙ソース"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "オンライン壁紙ソースを選択してください。各ソースは異なるスタイルの壁紙を提供します。"
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum（ランダム写真）"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily（中国）"
+
+msgid "Wallpaper count"
+msgstr "壁紙数"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "表示する壁紙の数（4-16、デフォルト：8）。変更はページを更新した後に有効になります。"
+
+msgid "Next Batch"
+msgstr "次のバッチ"
+
+msgid "Enable wallpaper"
+msgstr "Enable wallpaper"
+
+msgid "Background blur (px)"
+msgstr "Background blur (px)"
+
+msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+msgstr "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "No wallpapers available in this category"
+msgstr "No wallpapers available in this category"

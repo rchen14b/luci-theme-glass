@@ -209,3 +209,60 @@ msgstr "Benutzername"
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr "JavaScript muss im Browser aktiviert sein, sonst funktioniert LuCI nicht ordnungsgemäß."
+
+msgid "Wallpaper source"
+msgstr "Hintergrundbild-Quelle"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "Wählen Sie eine Online-Hintergrundbildquelle. Jede Quelle bietet verschiedene Stile."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (Zufällige Fotos)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (China)"
+
+msgid "Wallpaper count"
+msgstr "Anzahl der Hintergrundbilder"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "Anzahl der anzuzeigenden Hintergrundbilder (4-16, Standard: 8). Änderungen werden nach dem Aktualisieren der Seite wirksam."
+
+msgid "Next Batch"
+msgstr "Nächste Stapel"
+
+msgid "Wallpaper source"
+msgstr "Hintergrundbild-Quelle"
+
+msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgstr "Wählen Sie eine Online-Hintergrundbildquelle. Jede Quelle bietet verschiedene Stile."
+
+msgid "Picsum (Random photos)"
+msgstr "Picsum (Zufällige Fotos)"
+
+msgid "Iciba Daily (China)"
+msgstr "Iciba Daily (China)"
+
+msgid "Wallpaper count"
+msgstr "Anzahl der Hintergrundbilder"
+
+msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgstr "Anzahl der anzuzeigenden Hintergrundbilder (4-16, Standard: 8). Änderungen werden nach dem Aktualisieren wirksam."
+
+msgid "Next Batch"
+msgstr "Nächste Stapel"
+
+msgid "Enable wallpaper"
+msgstr "Enable wallpaper"
+
+msgid "Background blur (px)"
+msgstr "Background blur (px)"
+
+msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+msgstr "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)"
+
+msgid "Source:"
+msgstr "Source:"
+
+msgid "No wallpapers available in this category"
+msgstr "No wallpapers available in this category"
