@@ -39,17 +39,30 @@
   /* Read dark.css for inline injection */
   const dark_css = readfile('/www/luci-static/glass/css/dark.css');
 
-  /* Find background media */
+  /* Find background media - Priority: UCI config > File detection */
   let bg_src = null;
   let bg_type = 'image';
   const bg_dir = '/www/luci-static/glass/background';
   const img_exts = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
   const vid_exts = ['.mp4', '.webm'];
 
-  for (let ext in img_exts) {
-    if (access(bg_dir + '/bg' + ext)) {
-      bg_src = media + '/background/bg' + ext;
-      break;
+  // First check UCI configuration
+  if (access('/etc/config/glass')) {
+    let uci_bg_url = cfg.get_first('glass', 'global', 'bg_url');
+    let uci_bg_type = cfg.get_first('glass', 'global', 'bg_type') ?? 'image';
+    if (uci_bg_url && access('/www' + uci_bg_url)) {
+      bg_src = uci_bg_url;
+      bg_type = uci_bg_type;
+    }
+  }
+
+  // Fallback to file detection if no UCI config or file not found
+  if (!bg_src) {
+    for (let ext in img_exts) {
+      if (access(bg_dir + '/bg' + ext)) {
+        bg_src = media + '/background/bg' + ext;
+        break;
+      }
     }
   }
   if (!bg_src) {
