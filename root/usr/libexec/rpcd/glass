@@ -111,10 +111,10 @@ generate_wallpapers() {
             url="https://picsum.photos/seed/${img_seed}/1920/1080"
             thumb="https://picsum.photos/seed/${img_seed}/400/225"
         elif [ "$source" = "bing" ]; then
-            # Bing uses different approach - same URL for all
-            # Use picsum for thumbnails as Bing API doesn't support resize
+            # Bing Daily - use same URL for preview and download
+            # Use 1366 for preview (faster loading), 1920 for full download
             url="https://bing.biturl.top/?resolution=1920&format=image&index=${idx}"
-            thumb="https://picsum.photos/seed/bing${img_seed}/400/225"
+            thumb="https://bing.biturl.top/?resolution=1366&format=image&index=${idx}"
         elif [ "$source" = "iciba" ]; then
             # Iciba daily - use picsum as fallback with different seed (China-friendly)
             url="https://picsum.photos/seed/iciba${img_seed}/1920/1080"
