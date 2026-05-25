@@ -266,3 +266,12 @@ msgstr "Source:"
 
 msgid "No wallpapers available in this category"
 msgstr "No wallpapers available in this category"
+
+msgid "Wallpaper Disabled"
+msgstr "壁紙功能未啟用"
+
+msgid "Please enable wallpaper feature first."
+msgstr "請先啟用壁紙功能。"
+
+msgid "OK"
+msgstr "確定"

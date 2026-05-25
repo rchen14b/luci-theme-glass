@@ -398,3 +398,15 @@ msgid ""
 "Enable or disable the wallpaper feature. When disabled, no background image "
 "will be shown."
 msgstr "启用或禁用壁纸功能。禁用时，将不显示背景图片。"
+
+#: htdocs/luci-static/resources/view/system/glass.js:550
+msgid "Wallpaper Disabled"
+msgstr "壁纸功能未启用"
+
+#: htdocs/luci-static/resources/view/system/glass.js:551
+msgid "Please enable wallpaper feature first."
+msgstr "请先启用壁纸功能。"
+
+#: htdocs/luci-static/resources/view/system/glass.js:556
+msgid "OK"
+msgstr "确定"

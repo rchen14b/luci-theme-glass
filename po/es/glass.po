@@ -297,3 +297,15 @@ msgstr "Source:"
 
 msgid "No wallpapers available in this category"
 msgstr "No wallpapers available in this category"
+
+msgid "Please enable wallpaper feature first"
+msgstr "Please enable wallpaper feature first"
+
+msgid "Wallpaper Disabled"
+msgstr "Wallpaper Disabled"
+
+msgid "Please enable wallpaper feature first."
+msgstr "Please enable wallpaper feature first."
+
+msgid "OK"
+msgstr "OK"

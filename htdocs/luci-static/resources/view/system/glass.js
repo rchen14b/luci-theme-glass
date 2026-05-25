@@ -544,6 +544,21 @@ return view.extend({
 	handleDownload: function(id) {
 		var self = this;
 		console.log('Glass: handleDownload called with id =', id);
+
+		// Check if wallpaper is enabled
+		if (!self.bgEnabled) {
+			ui.showModal(_('Wallpaper Disabled'), [
+				E('p', {}, _('Please enable wallpaper feature first.')),
+				E('div', { 'class': 'right' }, [
+					E('button', {
+						'class': 'cbi-button cbi-button-primary',
+						'click': function() { ui.hideModal(); }
+					}, _('OK'))
+				])
+			]);
+			return;
+		}
+
 		var btn = document.querySelector('[data-wallpaper-id="' + id + '"] .cbi-button');
 		var originalText = btn ? btn.textContent : '';
 		console.log('Glass: button found =', !!btn, 'originalText =', originalText);
