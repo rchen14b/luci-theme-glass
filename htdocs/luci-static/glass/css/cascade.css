@@ -2589,3 +2589,41 @@ progress::-moz-progress-bar {
 [data-page="admin-system-package-manager"] .controls > div:nth-child(4) > .control-group {
   gap: var(--space-sm) !important;
 }
+
+/* 1. Force top sub-menu tab container to display as flexbox */
+ul.cbi-tabmenu, 
+.cbi-tabmenu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    margin-bottom: 15px !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+}
+
+/* 2. Ensure each tab item displays inline-block properly without squeezing */
+ul.cbi-tabmenu > li,
+.cbi-tabmenu > li {
+    display: inline-block !important;
+    margin: 3px 5px !important;
+}
+
+/* 3. Restore form container to standard block layout to prevent right-side layout distortion */
+.cbi-map, 
+.cbi-section, 
+.cbi-value,
+.cbi-value-field {
+    display: block !important;
+    clear: both !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 4. Restore inline labels and input fields to normal vertical alignment */
+.cbi-value-title {
+    display: block !important;
+    float: none !important;
+    margin-bottom: 5px !important;
+}
