@@ -2177,6 +2177,7 @@ body.modal-overlay-active #modal_overlay {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .ifacebox-head.active {
+  border-radius: calc(var(--radius-md) - 0.5px) calc(var(--radius-md) - 0.5px) 0 0;
   background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.75) 0%, rgba(var(--color-primary-rgb), 0.6) 50%, rgba(var(--color-primary-rgb), 0.7) 100%);
   color: var(--color-text-inverse);
   padding: var(--space-sm) var(--space-lg);
