@@ -207,3 +207,11 @@ msgstr ""
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
 msgstr ""
+
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid "Accordion mode"
+msgstr "手风琴模式"
+
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid "Keep only one menu section expanded: opening a menu automatically collapses the others."
+msgstr "只保持一个菜单展开，打开一个菜单时自动收起其他菜单。"

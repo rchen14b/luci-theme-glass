@@ -23,6 +23,7 @@
   let glass_blur_dark = '25';
   let glass_transparency_dark = '0.30';
   let glass_font_size = '14';
+  let glass_menu_accordion = '0';
 
   let cfg = cursor();
   if (access('/etc/config/glass')) {
@@ -34,9 +35,13 @@
     glass_blur_dark         = cfg.get_first('glass', 'global', 'blur_dark')         ?? glass_blur_dark;
     glass_transparency_dark = cfg.get_first('glass', 'global', 'transparency_dark') ?? glass_transparency_dark;
     glass_font_size         = cfg.get_first('glass', 'global', 'font_size')         ?? glass_font_size;
+    glass_menu_accordion    = cfg.get_first('glass', 'global', 'menu_accordion')    ?? glass_menu_accordion;
   }
 
   /* Read dark.css for inline injection */
+  if (!(glass_menu_accordion in ['0', '1']))
+    glass_menu_accordion = '0';
+
   const dark_css = readfile('/www/luci-static/glass/css/dark.css');
 
   /* Find background media */
@@ -63,7 +68,7 @@
   }
 -%}
 <!DOCTYPE html>
-<html lang="{{ dispatcher.lang }}">
+<html lang="{{ dispatcher.lang }}" data-menu-accordion="{{ glass_menu_accordion }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">

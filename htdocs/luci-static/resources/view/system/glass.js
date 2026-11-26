@@ -40,6 +40,11 @@ return view.extend({
 		o.default = '1';
 		o.rmempty = false;
 
+		o = s.option(form.Flag, 'menu_accordion', _('Accordion mode'),
+			_('Keep only one menu section expanded: opening a menu automatically collapses the others.'));
+		o.default = '0';
+		o.rmempty = false;
+
 		o = s.option(form.ListValue, 'font_size', _('Base font size'),
 			_('Scales all text in the theme. Larger values improve readability on high-DPI displays.'));
 		o.value('13', _('Small (13px)'));
