@@ -1828,9 +1828,6 @@ input[type="radio"] {
   box-shadow: none;
   border-radius: 0;
 }
-#modal_overlay > .modal:has(.cbi-dropdown[open]) {
-  overflow: visible;
-}
 #modal_overlay > .modal.cbi-modal,
 #modal_overlay > .modal.uci-dialog {
   max-width: 900px;
