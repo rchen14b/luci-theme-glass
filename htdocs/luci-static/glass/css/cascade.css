@@ -1746,6 +1746,8 @@ table.cbi-section-table .tr:hover .td {
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  line-height: 1;
 }
 /* ---- Checkbox & Radio ---- */
 input[type="checkbox"],
@@ -2136,6 +2138,9 @@ body.modal-overlay-active #modal_overlay {
   .table {
     display: block;
     overflow-x: auto;
+  }
+  .table:has(.cbi-progressbar) {
+    display: table;
   }
 }
 /* ==========================================================================
@@ -2588,4 +2593,9 @@ progress::-moz-progress-bar {
 [data-page="admin-system-opkg"] .controls > div:nth-child(4) > .control-group,
 [data-page="admin-system-package-manager"] .controls > div:nth-child(4) > .control-group {
   gap: var(--space-sm) !important;
+}
+@media (max-width: 640px) {
+  .cbi-progressbar::after {
+    font-size: 0.65rem;
+  }
 }
