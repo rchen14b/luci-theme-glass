@@ -1643,7 +1643,14 @@ table.cbi-section-table .tr:hover .td {
    IMPORTANT: Do NOT use !important here — LuCI's dependency system needs
    to evaluate fields in all tabs during page load to set proper visibility. */
 [data-tab][data-tab-title]:not([data-tab-active="true"]) {
-  display: none;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-width: 0;
 }
 /* ---- Alerts / Messages ----
    Only the container is tinted — body text stays at `--color-text` so
