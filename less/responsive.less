@@ -6,6 +6,8 @@
 @media (max-width: 1024px) {
   #sidebar {
     transform: translateX(calc(-100% - var(--sidebar-gap)));
+    /* overlay sidebar must sit above the fixed header/sub-nav bars */
+    z-index: calc(var(--z-header) + 1);
 
     &.open {
       transform: translateX(0);
