@@ -298,6 +298,14 @@ return baseclass.extend({
 		if (children.length == 0)
 			return E([]);
 
+		/* footer.ut may have moved a CBI tabmenu into header-sub and hidden
+		   the original before the menu data loaded; restore in-content tabmenus
+		   or they stay invisible forever (server-rendered pages like OpenClash) */
+		document.querySelectorAll('.cbi-tabmenu').forEach(function(tm) {
+			if (tm.style.display === 'none')
+				tm.style.display = '';
+		});
+
 		/* Clear any CBI tabs that footer.ut added before menu loaded */
 		container.innerHTML = '';
 		container.classList.remove('active');
