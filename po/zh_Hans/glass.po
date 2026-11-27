@@ -371,42 +371,12 @@ msgstr "用户名"
 #: ucode/template/themes/glass/header.ut:212
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
-msgstr "请在浏览器中启用 JavaScript，否则 LuCI 无法正常工作。"
+msgstr ""
 
-#: htdocs/luci-static/resources/view/system/glass.js:240
-msgid "Enable wallpaper"
-msgstr "启用壁纸"
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid "Accordion mode"
+msgstr "手风琴模式"
 
-#: htdocs/luci-static/resources/view/system/glass.js:263
-msgid "Background blur (px)"
-msgstr "背景模糊 (px)"
-
-#: htdocs/luci-static/resources/view/system/glass.js:264
-msgid "Blur effect on background wallpaper (0 = no blur, 50 = maximum blur)."
-msgstr "背景壁纸模糊效果（0 = 无模糊，50 = 最大模糊）。"
-
-#: htdocs/luci-static/resources/view/system/glass.js:380
-msgid "Source:"
-msgstr "源地址："
-
-#: htdocs/luci-static/resources/view/system/glass.js:434
-msgid "No wallpapers available in this category"
-msgstr "该分类下没有可用壁纸"
-
-#: htdocs/luci-static/resources/view/system/glass.js:241
-msgid ""
-"Enable or disable the wallpaper feature. When disabled, no background image "
-"will be shown."
-msgstr "启用或禁用壁纸功能。禁用时，将不显示背景图片。"
-
-#: htdocs/luci-static/resources/view/system/glass.js:550
-msgid "Wallpaper Disabled"
-msgstr "壁纸功能未启用"
-
-#: htdocs/luci-static/resources/view/system/glass.js:551
-msgid "Please enable wallpaper feature first."
-msgstr "请先启用壁纸功能。"
-
-#: htdocs/luci-static/resources/view/system/glass.js:556
-msgid "OK"
-msgstr "确定"
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid "Keep only one menu section expanded: opening a menu automatically collapses the others."
+msgstr "只保持一个菜单展开，打开一个菜单时自动收起其他菜单。"
