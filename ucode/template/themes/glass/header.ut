@@ -23,6 +23,7 @@
   let glass_blur_dark = '25';
   let glass_transparency_dark = '0.30';
   let glass_font_size = '14';
+  let glass_menu_accordion = '0';
 
   let cfg = cursor();
   if (access('/etc/config/glass')) {
@@ -34,22 +35,39 @@
     glass_blur_dark         = cfg.get_first('glass', 'global', 'blur_dark')         ?? glass_blur_dark;
     glass_transparency_dark = cfg.get_first('glass', 'global', 'transparency_dark') ?? glass_transparency_dark;
     glass_font_size         = cfg.get_first('glass', 'global', 'font_size')         ?? glass_font_size;
+    glass_menu_accordion    = cfg.get_first('glass', 'global', 'menu_accordion')    ?? glass_menu_accordion;
   }
 
   /* Read dark.css for inline injection */
+  if (!(glass_menu_accordion in ['0', '1']))
+    glass_menu_accordion = '0';
+
   const dark_css = readfile('/www/luci-static/glass/css/dark.css');
 
-  /* Find background media */
+  /* Find background media - Priority: UCI config > File detection */
   let bg_src = null;
   let bg_type = 'image';
   const bg_dir = '/www/luci-static/glass/background';
   const img_exts = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
   const vid_exts = ['.mp4', '.webm'];
 
-  for (let ext in img_exts) {
-    if (access(bg_dir + '/bg' + ext)) {
-      bg_src = media + '/background/bg' + ext;
-      break;
+  // First check UCI configuration
+  if (access('/etc/config/glass')) {
+    let uci_bg_url = cfg.get_first('glass', 'global', 'bg_url');
+    let uci_bg_type = cfg.get_first('glass', 'global', 'bg_type') ?? 'image';
+    if (uci_bg_url && access('/www' + uci_bg_url)) {
+      bg_src = uci_bg_url;
+      bg_type = uci_bg_type;
+    }
+  }
+
+  // Fallback to file detection if no UCI config or file not found
+  if (!bg_src) {
+    for (let ext in img_exts) {
+      if (access(bg_dir + '/bg' + ext)) {
+        bg_src = media + '/background/bg' + ext;
+        break;
+      }
     }
   }
   if (!bg_src) {
@@ -63,7 +81,7 @@
   }
 -%}
 <!DOCTYPE html>
-<html lang="{{ dispatcher.lang }}">
+<html lang="{{ dispatcher.lang }}" data-menu-accordion="{{ glass_menu_accordion }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
