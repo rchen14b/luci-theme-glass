@@ -277,6 +277,14 @@ return baseclass.extend({
 							subEl.classList.remove('open');
 							navItem.classList.remove('open');
 						} else {
+							if (document.documentElement.dataset.menuAccordion === '1') {
+								subEl.parentElement.querySelectorAll('.nav-sub.open').forEach(function(el) {
+									el.classList.remove('open');
+								});
+								subEl.parentElement.querySelectorAll('.nav-item.open').forEach(function(el) {
+									if (el !== navItem) el.classList.remove('open');
+								});
+							}
 							subEl.classList.add('open');
 							navItem.classList.add('open');
 						}
