@@ -33,7 +33,8 @@ msgstr "ダークモードのグラスパネルの背景ブラー半径。"
 msgid ""
 "Backdrop blur radius for glass panels. Higher values create a more frosted "
 "appearance."
-msgstr "グラスパネルの背景ブラー半径。大きい値ほどすりガラス風の効果が強くなります。"
+msgstr ""
+"グラスパネルの背景ブラー半径。大きい値ほどすりガラス風の効果が強くなります。"
 
 #: htdocs/luci-static/resources/view/system/glass.js:120
 msgid "Background"
@@ -48,7 +49,8 @@ msgstr "グラスパネルの背景不透明度（0 = 完全透明、 1 = 完全
 msgid ""
 "Background opacity of glass panels in dark mode (0 = fully transparent, 1 = "
 "fully opaque)."
-msgstr "ダークモードのグラスパネルの背景不透明度（0 = 完全透明、 1 = 完全不透明）。"
+msgstr ""
+"ダークモードのグラスパネルの背景不透明度（0 = 完全透明、 1 = 完全不透明）。"
 
 #: htdocs/luci-static/resources/view/system/glass.js:43
 msgid "Base font size"
@@ -63,7 +65,8 @@ msgstr "ブラー強度（px）"
 msgid ""
 "Configure the appearance of the Glass theme. Changes take effect after "
 "saving and refreshing the page."
-msgstr "Glassテーマの外観を設定します。変更は保存してページを更新すると反映されます。"
+msgstr ""
+"Glassテーマの外観を設定します。変更は保存してページを更新すると反映されます。"
 
 #: htdocs/luci-static/resources/view/system/glass.js:32
 msgid ""
@@ -143,8 +146,9 @@ msgid ""
 "No background set. Upload an image or video named \"bg\" (e.g. bg.jpg, "
 "bg.png, bg.mp4) to /www/luci-static/glass/background/ via SCP."
 msgstr ""
-"背景が未設定です。SCPで\"bg\"という名前の画像または動画（bg.jpg、"
-"bg.png、bg.mp4など）を /www/luci-static/glass/background/ にアップロードしてください。"
+"背景が未設定です。SCPで\"bg\"という名前の画像または動画（bg.jpg、bg.png、"
+"bg.mp4など）を /www/luci-static/glass/background/ にアップロードしてくださ"
+"い。"
 
 #: ucode/template/themes/glass/header.ut:201
 msgid "No password set!"
@@ -175,13 +179,17 @@ msgstr "メインカラー（ライトモード）"
 msgid ""
 "Scales all text in the theme. Larger values improve readability on high-DPI "
 "displays."
-msgstr "テーマ内のすべてのテキストをスケーリングします。大きい値は高解像度ディスプレイでの読みやすさを向上させます。"
+msgstr ""
+"テーマ内のすべてのテキストをスケーリングします。大きい値は高解像度ディスプレ"
+"イでの読みやすさを向上させます。"
 
 #: htdocs/luci-static/resources/view/system/glass.js:39
 msgid ""
 "Show live system stats (CPU, RAM, network, uptime) in the header. Disable to "
 "reduce resource usage on low-end devices."
-msgstr "ヘッダーにリアルタイムのシステム情報（CPU、RAM、ネットワーク、稼働時間）を表示。低スペック端末では無効にできます。"
+msgstr ""
+"ヘッダーにリアルタイムのシステム情報（CPU、RAM、ネットワーク、稼働時間）を表"
+"示。低スペック端末では無効にできます。"
 
 #: ucode/template/themes/glass/sysauth.ut:106
 msgid "Sign in to continue"
@@ -199,7 +207,9 @@ msgstr "テーマモード"
 msgid ""
 "There is no password set on this router. Please configure a root password to "
 "protect the web interface."
-msgstr "このルーターにパスワードが設定されていません。Webインターフェースを保護するために root パスワードを設定してください。"
+msgstr ""
+"このルーターにパスワードが設定されていません。Webインターフェースを保護するた"
+"めに root パスワードを設定してください。"
 
 #: ucode/template/themes/glass/sysauth.ut:117
 msgid "Username"
@@ -213,8 +223,12 @@ msgstr "ブラウザーでJavaScriptを有効にしないと、LuCIが正常に�
 msgid "Wallpaper source"
 msgstr "壁紙ソース"
 
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "オンライン壁紙ソースを選択してください。各ソースは異なるスタイルの壁紙を提供します。"
+msgid ""
+"Select online wallpaper source. Each source provides different styles of "
+"wallpapers."
+msgstr ""
+"オンライン壁紙ソースを選択してください。各ソースは異なるスタイルの壁紙を提供"
+"します。"
 
 msgid "Picsum (Random photos)"
 msgstr "Picsum（ランダム写真）"
@@ -225,29 +239,12 @@ msgstr "Iciba Daily（中国）"
 msgid "Wallpaper count"
 msgstr "壁紙数"
 
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "表示する壁紙の数（4-16、デフォルト：8）。変更はページを更新した後に有効になります。"
-
-msgid "Next Batch"
-msgstr "次のバッチ"
-
-msgid "Wallpaper source"
-msgstr "壁紙ソース"
-
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "オンライン壁紙ソースを選択してください。各ソースは異なるスタイルの壁紙を提供します。"
-
-msgid "Picsum (Random photos)"
-msgstr "Picsum（ランダム写真）"
-
-msgid "Iciba Daily (China)"
-msgstr "Iciba Daily（中国）"
-
-msgid "Wallpaper count"
-msgstr "壁紙数"
-
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "表示する壁紙の数（4-16、デフォルト：8）。変更はページを更新した後に有効になります。"
+msgid ""
+"Number of wallpapers to display (4-16, default: 8). Changes take effect "
+"after refreshing the page."
+msgstr ""
+"表示する壁紙の数（4-16、デフォルト：8）。変更はページを更新した後に有効になり"
+"ます。"
 
 msgid "Next Batch"
 msgstr "次のバッチ"

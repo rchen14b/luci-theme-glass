@@ -5,6 +5,7 @@
 'require fs';
 'require rpc';
 'require ui';
+'require network';
 
 var callGlassWallpapers = rpc.declare({
 	object: 'glass',
@@ -59,7 +60,8 @@ return view.extend({
 			L.resolveDefault(fs.list('/www/luci-static/glass/background'), []),
 			L.resolveDefault(callGlassWallpapers(), { wallpapers: [], categories: [] }),
 			L.resolveDefault(callGlassCurrent(), { current: null }),
-			L.resolveDefault(callGlassGetSource(), { source: 'picsum' })
+			L.resolveDefault(callGlassGetSource(), { source: 'picsum' }),
+			L.resolveDefault(network.getDevices(), [])
 		]);
 	},
 
@@ -131,6 +133,22 @@ return view.extend({
 			_('Show live system stats (CPU, RAM, network, uptime) in the header. Disable to reduce resource usage on low-end devices.'));
 		o.default = '1';
 		o.rmempty = false;
+
+		o = s.option(form.Value, 'status_device', _('Throughput device'),
+			_('Network device the header throughput indicator monitors. Leave empty to detect the WAN device automatically. With PPPoE and hardware offloading, pick the physical WAN port (e.g. wan) instead of pppoe-wan.'));
+		o.placeholder = _('Auto-detect');
+		o.optional = true;
+		o.depends('status_bar', '1');
+		(data[5] || []).forEach(function(dev) {
+			var name = dev.getName();
+			if (name && name !== 'lo')
+				o.value(name);
+		});
+		o.validate = function(section_id, value) {
+			if (!value || /^[A-Za-z0-9_.:@-]{1,15}$/.test(value))
+				return true;
+			return _('Expecting a network device name');
+		};
 
 		o = s.option(form.Flag, 'menu_accordion', _('Accordion mode'),
 			_('Keep only one menu section expanded: opening a menu automatically collapses the others.'));
@@ -338,9 +356,7 @@ return view.extend({
 			window.glassEventsBound = true;
 			document.addEventListener('click', function(ev) {
 				var target = ev.target;
-				console.log('Glass: click detected on', target);
 				while (target && target !== document.body) {
-					console.log('Glass: checking target', target);
 					if (target.matches('[data-action="remove-bg"]')) {
 						ev.preventDefault();
 						self.handleRemoveBg();
@@ -349,21 +365,23 @@ return view.extend({
 					if (target.matches('[data-wallpaper-id]')) {
 						ev.preventDefault();
 						var id = target.getAttribute('data-wallpaper-id');
-						console.log('Glass: downloading wallpaper', id);
 						self.handleDownload(id);
 						return;
 					}
 					if (target.matches('[data-category]')) {
 						ev.preventDefault();
 						var cat = target.getAttribute('data-category');
-						console.log('Glass: filtering category', cat);
 						self.filterGallery(cat);
 						return;
 					}
 				if (target.matches('[data-action="next-batch"]')) {
 					ev.preventDefault();
-					console.log('Glass: next batch clicked');
 					self.handleNextBatch();
+					return;
+				}
+				if (target.matches('[data-action="download-custom"]')) {
+					ev.preventDefault();
+					self.handleCustomDownload(target);
 					return;
 				}
 				target = target.parentElement;
@@ -377,8 +395,6 @@ return view.extend({
 	renderGallery: function() {
 		var self = this;
 		// Debug: log data loading status
-		console.log('Glass: wallpapers count =', self.wallpapers ? self.wallpapers.length : 0);
-		console.log('Glass: categories count =', self.categories ? self.categories.length : 0);
 		var html = '<div data-bg-gallery="true">';
 
 		// Source info and Next Batch button
@@ -464,32 +480,8 @@ return view.extend({
 		html += '</div>';
 		html += '</div>';
 
-		// Add custom URL handler
-		html += '<script>';
-		html += '(function(){';
-		html += 'document.querySelector(\'[data-action="download-custom"]\')?.addEventListener("click",function(){';
-		html += 'var url=document.getElementById("custom-wallpaper-url").value;';
-		html += 'if(url){';
-		html += 'var btn=this;';
-		html += 'btn.disabled=true;';
-		html += 'btn.textContent=' + JSON.stringify(_('Downloading...')) + ';';
-		html += 'L.post(\'/ubus/glass.download\',{url:url}).then(function(r){';
-		html += 'if(r&&r.success){';
-		html += 'ui.addNotification(null,E(\'p\',{},' + JSON.stringify(_('Wallpaper applied successfully. Refresh the page to see the changes.')) + '),\'success\');';
-		html += '}else{';
-		html += 'ui.addNotification(null,E(\'p\',{},(r&&r.error)||' + JSON.stringify(_('Failed to download wallpaper')) + '),\'error\');';
-		html += '}';
-		html += 'btn.disabled=false;';
-		html += 'btn.textContent=' + JSON.stringify(_('Download & Apply')) + ';';
-		html += '}).catch(function(e){';
-		html += 'ui.addNotification(null,E(\'p\',{},' + JSON.stringify(_('Download failed')) + '),\'error\');';
-		html += 'btn.disabled=false;';
-		html += 'btn.textContent=' + JSON.stringify(_('Download & Apply')) + ';';
-		html += '});';
-		html += '}';
-		html += '});';
-		html += '})();';
-		html += '</script>';
+		// Custom URL button is handled by the delegated click listener in
+		// render(): <script> tags inserted through innerHTML never execute
 
 		// Add hover styles
 		html += '<style>';
@@ -548,7 +540,6 @@ return view.extend({
 
 	handleDownload: function(id) {
 		var self = this;
-		console.log('Glass: handleDownload called with id =', id);
 
 		// Check if wallpaper is enabled
 		if (!self.bgEnabled) {
@@ -566,21 +557,17 @@ return view.extend({
 
 		var btn = document.querySelector('[data-wallpaper-id="' + id + '"] .cbi-button');
 		var originalText = btn ? btn.textContent : '';
-		console.log('Glass: button found =', !!btn, 'originalText =', originalText);
 
 		// Get the direct URL from the wallpaper element
 		var wpEl = document.querySelector('[data-wallpaper-id="' + id + '"]');
 		var directUrl = wpEl ? wpEl.getAttribute('data-wallpaper-url') : null;
-		console.log('Glass: directUrl =', directUrl);
 
 		if (btn) {
 			btn.disabled = true;
 			btn.textContent = _('Downloading...');
 		}
 
-		console.log('Glass: calling callGlassDownload with id =', id, 'url =', directUrl);
 		callGlassDownload(id, null, directUrl).then(function(result) {
-			console.log('Glass: download result =', result);
 			// Support both boolean and object return formats
 			var success = (result === true) || (result && result.success === true);
 			if (success) {
@@ -590,17 +577,13 @@ return view.extend({
 				self.currentBg = { name: filename, type: 'image', path: '/luci-static/glass/background/' + filename };
 				// Update background image immediately without page refresh
 				var bgWrap = document.getElementById('bg-wrap');
-				console.log('Glass: bg-wrap element =', bgWrap);
 				if (bgWrap) {
 					var timestamp = new Date().getTime();
 					var newSrc = '/luci-static/glass/background/' + filename + '?t=' + timestamp;
-					console.log('Glass: setting new src =', newSrc);
 					var existingImg = bgWrap.querySelector('img');
 					var existingVideo = bgWrap.querySelector('video');
-					console.log('Glass: existingImg =', existingImg, 'existingVideo =', existingVideo);
 					if (existingImg) {
 						existingImg.src = newSrc;
-						console.log('Glass: updated existing image src');
 					} else if (existingVideo) {
 						// Remove video and add image
 						existingVideo.remove();
@@ -611,7 +594,6 @@ return view.extend({
 						newImg.style.height = '100%';
 						newImg.style.objectFit = 'cover';
 						bgWrap.appendChild(newImg);
-						console.log('Glass: replaced video with image');
 					} else {
 						// No background exists yet
 						var newImg = document.createElement('img');
@@ -621,7 +603,6 @@ return view.extend({
 						newImg.style.height = '100%';
 						newImg.style.objectFit = 'cover';
 						bgWrap.appendChild(newImg);
-						console.log('Glass: created new image element');
 					}
 				} else {
 					console.error('Glass: bg-wrap element not found!');
@@ -651,9 +632,40 @@ return view.extend({
 		});
 	},
 
+	handleCustomDownload: function(btn) {
+		var input = document.getElementById('custom-wallpaper-url');
+		var url = input ? input.value.trim() : '';
+
+		if (!this.bgEnabled) {
+			ui.addNotification(null, E('p', {}, _('Please enable wallpaper feature first.')), 'warning');
+			return;
+		}
+		if (!/^https?:\/\//i.test(url)) {
+			ui.addNotification(null, E('p', {}, _('Enter a direct image URL to download and apply as background')), 'warning');
+			return;
+		}
+
+		btn.disabled = true;
+		btn.textContent = _('Downloading...');
+
+		callGlassDownload(null, url, null).then(function(result) {
+			if (result && result.success === true) {
+				ui.addNotification(null, E('p', {}, _('Wallpaper applied successfully')), 'success');
+				setTimeout(function() { window.location.reload(); }, 1000);
+				return;
+			}
+			ui.addNotification(null, E('p', {}, (result && result.error) || _('Failed to download wallpaper')), 'error');
+			btn.disabled = false;
+			btn.textContent = _('Download & Apply');
+		}).catch(function(err) {
+			ui.addNotification(null, E('p', {}, _('Download failed: ') + (err.message || err)), 'error');
+			btn.disabled = false;
+			btn.textContent = _('Download & Apply');
+		});
+	},
+
 	handleNextBatch: function() {
 		var self = this;
-		console.log('Glass: handleNextBatch called');
 
 		var btn = document.querySelector('[data-action="next-batch"]');
 		if (btn) {
@@ -662,7 +674,6 @@ return view.extend({
 		}
 
 		callGlassNextBatch().then(function(result) {
-			console.log('Glass: next batch result =', result);
 			if (result && result.success) {
 				ui.addNotification(null, E('p', {}, _('New batch loaded, refreshing...')), 'success');
 				// Reload page to get new wallpapers
@@ -688,14 +699,11 @@ return view.extend({
 
 	handleRemoveBg: function() {
 		var self = this;
-		console.log('Glass: handleRemoveBg called, currentBg =', self.currentBg);
 		if (!confirm(_('Remove current background and return to default theme?'))) {
 			return;
 		}
 
-		console.log('Glass: calling callGlassRemove');
 		callGlassRemove().then(function(result) {
-			console.log('Glass: remove result =', result);
 			// Support both boolean and object return formats
 			var success = (result === true) || (result && result.success === true);
 			if (success) {

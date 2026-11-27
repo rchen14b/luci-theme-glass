@@ -143,8 +143,8 @@ msgid ""
 "No background set. Upload an image or video named \"bg\" (e.g. bg.jpg, "
 "bg.png, bg.mp4) to /www/luci-static/glass/background/ via SCP."
 msgstr ""
-"未設定背景。請透過 SCP 將名為 \"bg\" 的圖片或影片（bg.jpg、"
-"bg.png、bg.mp4 等）上傳至 /www/luci-static/glass/background/。"
+"未設定背景。請透過 SCP 將名為 \"bg\" 的圖片或影片（bg.jpg、bg.png、bg.mp4 "
+"等）上傳至 /www/luci-static/glass/background/。"
 
 #: ucode/template/themes/glass/header.ut:201
 msgid "No password set!"
@@ -181,7 +181,9 @@ msgstr "縮放主題內所有文字，較大數値可提升高長度螢幕上的
 msgid ""
 "Show live system stats (CPU, RAM, network, uptime) in the header. Disable to "
 "reduce resource usage on low-end devices."
-msgstr "在頂欄顯示即時系統狀態（CPU、記憶體、網路、運行時間）。低記憶體設備可停用以減少資源使用。"
+msgstr ""
+"在頂欄顯示即時系統狀態（CPU、記憶體、網路、運行時間）。低記憶體設備可停用以減"
+"少資源使用。"
 
 #: ucode/template/themes/glass/sysauth.ut:106
 msgid "Sign in to continue"
@@ -213,7 +215,9 @@ msgstr "必須在瀏覽器中啟用 JavaScript，否則 LuCI 無法正常運作�
 msgid "Wallpaper source"
 msgstr "壁紙源"
 
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
+msgid ""
+"Select online wallpaper source. Each source provides different styles of "
+"wallpapers."
 msgstr "選擇在線壁紙源。每個來源提供不同風格的壁紙。"
 
 msgid "Picsum (Random photos)"
@@ -225,28 +229,9 @@ msgstr "金山词霸每日壁紙（中國）"
 msgid "Wallpaper count"
 msgstr "壁紙數量"
 
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "顯示的壁紙數量（4-16，默認：8）。更改後需刷新頁面生效。"
-
-msgid "Next Batch"
-msgstr "下一批"
-
-msgid "Wallpaper source"
-msgstr "壁紙源"
-
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "選擇在線壁紙源。每個來源提供不同風格的壁紙。"
-
-msgid "Picsum (Random photos)"
-msgstr "Picsum（隨機照片）"
-
-msgid "Iciba Daily (China)"
-msgstr "金山词霸每日壁紙（中國）"
-
-msgid "Wallpaper count"
-msgstr "壁紙數量"
-
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
+msgid ""
+"Number of wallpapers to display (4-16, default: 8). Changes take effect "
+"after refreshing the page."
 msgstr "顯示的壁紙數量（4-16，默認：8）。更改後需刷新頁面生效。"
 
 msgid "Next Batch"

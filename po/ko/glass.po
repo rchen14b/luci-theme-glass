@@ -63,7 +63,9 @@ msgstr "흐림 강도 (px)"
 msgid ""
 "Configure the appearance of the Glass theme. Changes take effect after "
 "saving and refreshing the page."
-msgstr "Glass 테마 외관을 설정합니다. 변경 사항은 저장 후 페이지를 새로고침하면 적용됩니다."
+msgstr ""
+"Glass 테마 외관을 설정합니다. 변경 사항은 저장 후 페이지를 새로고침하면 적용"
+"됩니다."
 
 #: htdocs/luci-static/resources/view/system/glass.js:32
 msgid ""
@@ -175,13 +177,17 @@ msgstr "주 색상 (라이트 모드)"
 msgid ""
 "Scales all text in the theme. Larger values improve readability on high-DPI "
 "displays."
-msgstr "테마의 모든 텍스트를 확대/축소합니다. 높은 값은 고해상도 디스플레이에서 가독성을 향상시킵니다."
+msgstr ""
+"테마의 모든 텍스트를 확대/축소합니다. 높은 값은 고해상도 디스플레이에서 가독"
+"성을 향상시킵니다."
 
 #: htdocs/luci-static/resources/view/system/glass.js:39
 msgid ""
 "Show live system stats (CPU, RAM, network, uptime) in the header. Disable to "
 "reduce resource usage on low-end devices."
-msgstr "헤더에 실시간 시스템 정보(CPU, RAM, 네트워크, 가동 시간)를 표시합니다. 저사양 장치에서는 비활성화하세요."
+msgstr ""
+"헤더에 실시간 시스템 정보(CPU, RAM, 네트워크, 가동 시간)를 표시합니다. 저사"
+"양 장치에서는 비활성화하세요."
 
 #: ucode/template/themes/glass/sysauth.ut:106
 msgid "Sign in to continue"
@@ -199,7 +205,9 @@ msgstr "테마 모드"
 msgid ""
 "There is no password set on this router. Please configure a root password to "
 "protect the web interface."
-msgstr "이 라우터에 비밀번호가 설정되지 않았습니다. 웹 인터페이스를 보호하려면 root 비밀번호를 설정하세요."
+msgstr ""
+"이 라우터에 비밀번호가 설정되지 않았습니다. 웹 인터페이스를 보호하려면 root "
+"비밀번호를 설정하세요."
 
 #: ucode/template/themes/glass/sysauth.ut:117
 msgid "Username"
@@ -213,8 +221,12 @@ msgstr "브라우저에서 JavaScript를 활성화해야 LuCI가 정상적으로
 msgid "Wallpaper source"
 msgstr "배경화면 출처"
 
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "온라인 배경화면 출처를 선택하세요. 각 출처는 다른 스타일의 배경화면을 제공합니다."
+msgid ""
+"Select online wallpaper source. Each source provides different styles of "
+"wallpapers."
+msgstr ""
+"온라인 배경화면 출처를 선택하세요. 각 출처는 다른 스타일의 배경화면을 제공합"
+"니다."
 
 msgid "Picsum (Random photos)"
 msgstr "Picsum (무작위 사진)"
@@ -225,29 +237,12 @@ msgstr "Iciba Daily (중국)"
 msgid "Wallpaper count"
 msgstr "배경화면 수"
 
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "표시할 배경화면 수 (4-16, 기본값: 8). 변경 사항은 페이지를 새로고침한 후에 적용됩니다."
-
-msgid "Next Batch"
-msgstr "다음 배치"
-
-msgid "Wallpaper source"
-msgstr "배경화면 출처"
-
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "온라인 배경화면 출처를 선택하세요. 각 출처는 다른 스타일의 배경화면을 제공합니다."
-
-msgid "Picsum (Random photos)"
-msgstr "Picsum (무작위 사진)"
-
-msgid "Iciba Daily (China)"
-msgstr "Iciba Daily (중국)"
-
-msgid "Wallpaper count"
-msgstr "배경화면 수"
-
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "표시할 배경화면 수 (4-16, 기본값: 8). 변경 사항은 페이지를 새로고침한 후에 적용됩니다."
+msgid ""
+"Number of wallpapers to display (4-16, default: 8). Changes take effect "
+"after refreshing the page."
+msgstr ""
+"표시할 배경화면 수 (4-16, 기본값: 8). 변경 사항은 페이지를 새로고침한 후에 적"
+"용됩니다."
 
 msgid "Next Batch"
 msgstr "다음 배치"

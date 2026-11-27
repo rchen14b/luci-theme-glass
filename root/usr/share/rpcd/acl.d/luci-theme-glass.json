@@ -10,7 +10,7 @@
                 "session": [ "access", "login" ],
                 "network.interface": [ "dump" ],
                 "network.device": [ "status" ],
-                "glass": [ "wallpapers", "current", "getSource", "setSource", "nextBatch" ]
+                "glass": [ "wallpapers", "current", "getSource", "nextBatch" ]
             }
         },
         "write": {
@@ -19,7 +19,7 @@
                 "/www/luci-static/glass/background/*": [ "write" ]
             },
             "ubus": {
-                "glass": [ "download", "remove" ]
+                "glass": [ "download", "remove", "setSource" ]
             }
         }
     }

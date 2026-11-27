@@ -20,18 +20,30 @@ get_bg_enable() {
     fi
 }
 
+# Only the sources the Config page offers are accepted; the value is echoed
+# into JSON and into thumbnail URLs, so anything else falls back to picsum
+valid_source() {
+    case "$1" in
+        picsum|bing|iciba) return 0 ;;
+    esac
+    return 1
+}
+
 # Get wallpaper source
 get_bg_source() {
     local source
     source=$(uci -q get ${glass}.@global[0].bg_source 2>/dev/null)
-    echo "${source:-picsum}"
+    valid_source "$source" || source="picsum"
+    echo "$source"
 }
 
 # Get wallpaper count from UCI (default: 8, min: 4, max: 16)
 get_bg_count() {
     local count
     count=$(uci -q get glass.@global[0].bg_count)
-    count=${count:-8}
+    case "$count" in
+        ''|*[!0-9]*) count=8 ;;
+    esac
     [ "$count" -lt 4 ] && count=4
     [ "$count" -gt 16 ] && count=16
     echo "$count"
@@ -58,14 +70,21 @@ regenerate_batch_seed() {
     echo "$seed"
 }
 
-# Simple download function
+# Simple download function. Runs as root, so only plain http(s) URLs are
+# fetched (no file://, no option-looking strings), redirects included.
 download_file() {
-    url="$1"
-    output="$2"
+    local url="$1"
+    local output="$2"
+    case "$url" in
+        http://*|https://*) ;;
+        *) return 1 ;;
+    esac
     if command -v curl >/dev/null 2>&1; then
-        curl -Lfs --connect-timeout 10 --max-time 60 "$url" -o "$output" 2>/dev/null && return 0
+        curl -Lfs --proto '=http,https' --proto-redir '=http,https' \
+            --connect-timeout 10 --max-time 60 -o "$output" -- "$url" 2>/dev/null && return 0
     elif command -v wget >/dev/null 2>&1; then
-        wget -q -T 60 -t 2 -O "$output" "$url" 2>/dev/null && return 0
+        # Stock OpenWrt wget is uclient-fetch, which rejects -t (tries)
+        wget -q -T 60 -O "$output" "$url" 2>/dev/null && return 0
     fi
     return 1
 }
@@ -173,7 +192,7 @@ case "$1" in
         json_load "$input" 2>/dev/null || json_init
         json_get_var source source
         json_cleanup
-        if [ -n "$source" ]; then
+        if valid_source "$source"; then
             uci set $glass.@global[0].bg_source="$source"
             uci commit $glass
             # Regenerate batch on source change
@@ -284,7 +303,6 @@ case "$1" in
         json_cleanup
 
         customUrl="$url"
-        rm -f "${BG_DIR}/bg.jpg" "${BG_DIR}/bg.png" "${BG_DIR}/bg.webp"
         download_url=""
         ext=".jpg"
 
@@ -293,7 +311,8 @@ case "$1" in
             download_url="$direct"
         elif [ -n "$customUrl" ]; then
             download_url="$customUrl"
-            lowerUrl=$(echo "$download_url" | tr '[:upper:]' '[:lower:]')
+            # OpenWrt busybox tr has no [:upper:] classes; plain ranges work
+            lowerUrl=$(echo "$download_url" | tr 'A-Z' 'a-z')
             case "$lowerUrl" in
                 *.png) ext=".png" ;;
                 *.webp) ext=".webp" ;;
@@ -302,7 +321,13 @@ case "$1" in
 
         if [ -n "$download_url" ]; then
             output="${BG_DIR}/bg${ext}"
-            if download_file "$download_url" "$output" && [ -s "$output" ]; then
+            # Download to a temp file first: a failed or empty download must
+            # not wipe the wallpaper the user already has
+            tmp="${CACHE_DIR}/download.tmp"
+            rm -f "$tmp"
+            if download_file "$download_url" "$tmp" && [ -s "$tmp" ]; then
+                rm -f "${BG_DIR}/bg.jpg" "${BG_DIR}/bg.png" "${BG_DIR}/bg.webp"
+                mv -f "$tmp" "$output"
                 chmod 644 "$output"
                 uci set $glass.@global[0].bg_url="/luci-static/glass/background/bg${ext}"
                 uci set $glass.@global[0].bg_type="image"
@@ -314,7 +339,7 @@ case "$1" in
                 json_dump
                 json_cleanup
             else
-                rm -f "$output"
+                rm -f "$tmp"
                 json_init
                 json_add_boolean "success" 0
                 json_add_string "error" "Download failed"

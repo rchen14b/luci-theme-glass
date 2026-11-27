@@ -2,7 +2,8 @@ msgid ""
 msgstr ""
 "Language: ru\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: htdocs/luci-static/resources/view/system/glass.js:52
 msgid "Accent Colors"
@@ -33,7 +34,9 @@ msgstr "Радиус размытия фона панелей в тёмном р
 msgid ""
 "Backdrop blur radius for glass panels. Higher values create a more frosted "
 "appearance."
-msgstr "Радиус размытия фона стеклянных панелей. Большие значения дают эффект матового стекла."
+msgstr ""
+"Радиус размытия фона стеклянных панелей. Большие значения дают эффект "
+"матового стекла."
 
 #: htdocs/luci-static/resources/view/system/glass.js:120
 msgid "Background"
@@ -42,13 +45,17 @@ msgstr "Фон"
 #: htdocs/luci-static/resources/view/system/glass.js:98
 msgid ""
 "Background opacity of glass panels (0 = fully transparent, 1 = fully opaque)."
-msgstr "Непрозрачность фона стеклянных панелей (0 = полностью прозрачный, 1 = полностью непрозрачный)."
+msgstr ""
+"Непрозрачность фона стеклянных панелей (0 = полностью прозрачный, 1 = "
+"полностью непрозрачный)."
 
 #: htdocs/luci-static/resources/view/system/glass.js:114
 msgid ""
 "Background opacity of glass panels in dark mode (0 = fully transparent, 1 = "
 "fully opaque)."
-msgstr "Непрозрачность фона панелей в тёмном режиме (0 = полностью прозрачный, 1 = полностью непрозрачный)."
+msgstr ""
+"Непрозрачность фона панелей в тёмном режиме (0 = полностью прозрачный, 1 = "
+"полностью непрозрачный)."
 
 #: htdocs/luci-static/resources/view/system/glass.js:43
 msgid "Base font size"
@@ -63,7 +70,9 @@ msgstr "Интенсивность размытия (px)"
 msgid ""
 "Configure the appearance of the Glass theme. Changes take effect after "
 "saving and refreshing the page."
-msgstr "Настройка внешнего вида темы Glass. Изменения вступают в силу после сохранения и обновления страницы."
+msgstr ""
+"Настройка внешнего вида темы Glass. Изменения вступают в силу после "
+"сохранения и обновления страницы."
 
 #: htdocs/luci-static/resources/view/system/glass.js:32
 msgid ""
@@ -143,8 +152,9 @@ msgid ""
 "No background set. Upload an image or video named \"bg\" (e.g. bg.jpg, "
 "bg.png, bg.mp4) to /www/luci-static/glass/background/ via SCP."
 msgstr ""
-"Фон не установлен. Загрузите изображение или видео с именем \"bg\" (например, bg.jpg, "
-"bg.png, bg.mp4) в /www/luci-static/glass/background/ через SCP."
+"Фон не установлен. Загрузите изображение или видео с именем \"bg\" "
+"(например, bg.jpg, bg.png, bg.mp4) в /www/luci-static/glass/background/ "
+"через SCP."
 
 #: ucode/template/themes/glass/header.ut:201
 msgid "No password set!"
@@ -175,13 +185,17 @@ msgstr "Основной цвет (светлый режим)"
 msgid ""
 "Scales all text in the theme. Larger values improve readability on high-DPI "
 "displays."
-msgstr "Масштабирует весь текст темы. Большие значения улучшают читаемость на дисплеях с высоким DPI."
+msgstr ""
+"Масштабирует весь текст темы. Большие значения улучшают читаемость на "
+"дисплеях с высоким DPI."
 
 #: htdocs/luci-static/resources/view/system/glass.js:39
 msgid ""
 "Show live system stats (CPU, RAM, network, uptime) in the header. Disable to "
 "reduce resource usage on low-end devices."
-msgstr "Показывать статистику системы (CPU, ОЗУ, сеть, время работы) в заголовке. Отключите на слабых устройствах."
+msgstr ""
+"Показывать статистику системы (CPU, ОЗУ, сеть, время работы) в заголовке. "
+"Отключите на слабых устройствах."
 
 #: ucode/template/themes/glass/sysauth.ut:106
 msgid "Sign in to continue"
@@ -199,7 +213,9 @@ msgstr "Режим темы"
 msgid ""
 "There is no password set on this router. Please configure a root password to "
 "protect the web interface."
-msgstr "На этом роутере не установлен пароль. Пожалуйста, задайте пароль root для защиты веб-интерфейса."
+msgstr ""
+"На этом роутере не установлен пароль. Пожалуйста, задайте пароль root для "
+"защиты веб-интерфейса."
 
 #: ucode/template/themes/glass/sysauth.ut:117
 msgid "Username"
@@ -208,13 +224,19 @@ msgstr "Имя пользователя"
 #: ucode/template/themes/glass/header.ut:212
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
-msgstr "Необходимо включить JavaScript в браузере, иначе LuCI не будет работать корректно."
+msgstr ""
+"Необходимо включить JavaScript в браузере, иначе LuCI не будет работать "
+"корректно."
 
 msgid "Wallpaper source"
 msgstr "Источник обоев"
 
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Выберите источник обоев онлайн. Каждый источник предоставляет обои в разных стилях."
+msgid ""
+"Select online wallpaper source. Each source provides different styles of "
+"wallpapers."
+msgstr ""
+"Выберите источник обоев онлайн. Каждый источник предоставляет обои в разных "
+"стилях."
 
 msgid "Picsum (Random photos)"
 msgstr "Picsum (Случайные фото)"
@@ -225,29 +247,12 @@ msgstr "Iciba Daily (Китай)"
 msgid "Wallpaper count"
 msgstr "Количество обоев"
 
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Количество обоев для отображения (4-16, по умолчанию: 8). Изменения вступают в силу после обновления страницы."
-
-msgid "Next Batch"
-msgstr "Следующая партия"
-
-msgid "Wallpaper source"
-msgstr "Источник обоев"
-
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Выберите источник обоев онлайн. Каждый источник предоставляет обои в разных стилях."
-
-msgid "Picsum (Random photos)"
-msgstr "Picsum (Случайные фото)"
-
-msgid "Iciba Daily (China)"
-msgstr "Iciba Daily (Китай)"
-
-msgid "Wallpaper count"
-msgstr "Количество обоев"
-
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Количество обоев для отображения (4-16, по умолчанию: 8). Изменения вступают в силу после обновления."
+msgid ""
+"Number of wallpapers to display (4-16, default: 8). Changes take effect "
+"after refreshing the page."
+msgstr ""
+"Количество обоев для отображения (4-16, по умолчанию: 8). Изменения вступают "
+"в силу после обновления страницы."
 
 msgid "Next Batch"
 msgstr "Следующая партия"

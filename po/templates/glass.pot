@@ -206,10 +206,6 @@ msgstr ""
 msgid "Gradient"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/system/glass.js:276
-msgid "Active"
-msgstr ""
-
 #: htdocs/luci-static/resources/view/system/glass.js:283
 msgid "Apply"
 msgstr ""
@@ -333,4 +329,23 @@ msgstr ""
 #: ucode/template/themes/glass/header.ut:212
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
+msgstr ""
+
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid "Throughput device"
+msgstr ""
+
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid ""
+"Network device the header throughput indicator monitors. Leave empty to "
+"detect the WAN device automatically. With PPPoE and hardware offloading, "
+"pick the physical WAN port (e.g. wan) instead of pppoe-wan."
+msgstr ""
+
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid "Auto-detect"
+msgstr ""
+
+#: htdocs/luci-static/resources/view/system/glass.js
+msgid "Expecting a network device name"
 msgstr ""

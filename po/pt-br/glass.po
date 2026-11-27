@@ -33,7 +33,9 @@ msgstr "Raio de desfoque do plano de fundo dos painéis no modo escuro."
 msgid ""
 "Backdrop blur radius for glass panels. Higher values create a more frosted "
 "appearance."
-msgstr "Raio de desfoque do plano de fundo dos painéis de vidro. Valores maiores criam um efeito fosco mais intenso."
+msgstr ""
+"Raio de desfoque do plano de fundo dos painéis de vidro. Valores maiores "
+"criam um efeito fosco mais intenso."
 
 #: htdocs/luci-static/resources/view/system/glass.js:120
 msgid "Background"
@@ -42,13 +44,17 @@ msgstr "Plano de fundo"
 #: htdocs/luci-static/resources/view/system/glass.js:98
 msgid ""
 "Background opacity of glass panels (0 = fully transparent, 1 = fully opaque)."
-msgstr "Opacidade do plano de fundo dos painéis de vidro (0 = totalmente transparente, 1 = totalmente opaco)."
+msgstr ""
+"Opacidade do plano de fundo dos painéis de vidro (0 = totalmente "
+"transparente, 1 = totalmente opaco)."
 
 #: htdocs/luci-static/resources/view/system/glass.js:114
 msgid ""
 "Background opacity of glass panels in dark mode (0 = fully transparent, 1 = "
 "fully opaque)."
-msgstr "Opacidade do plano de fundo dos painéis no modo escuro (0 = totalmente transparente, 1 = totalmente opaco)."
+msgstr ""
+"Opacidade do plano de fundo dos painéis no modo escuro (0 = totalmente "
+"transparente, 1 = totalmente opaco)."
 
 #: htdocs/luci-static/resources/view/system/glass.js:43
 msgid "Base font size"
@@ -63,12 +69,15 @@ msgstr "Intensidade do desfoque (px)"
 msgid ""
 "Configure the appearance of the Glass theme. Changes take effect after "
 "saving and refreshing the page."
-msgstr "Configure a aparência do tema Glass. As alterações entram em vigor após salvar e atualizar a página."
+msgstr ""
+"Configure a aparência do tema Glass. As alterações entram em vigor após "
+"salvar e atualizar a página."
 
 #: htdocs/luci-static/resources/view/system/glass.js:32
 msgid ""
 "Controls the overall appearance. \"Normal\" follows the system preference."
-msgstr "Controla a aparência geral. «Automático» segue as preferências do sistema."
+msgstr ""
+"Controla a aparência geral. «Automático» segue as preferências do sistema."
 
 #: htdocs/luci-static/resources/view/system/glass.js:123
 msgid "Current background"
@@ -143,8 +152,8 @@ msgid ""
 "No background set. Upload an image or video named \"bg\" (e.g. bg.jpg, "
 "bg.png, bg.mp4) to /www/luci-static/glass/background/ via SCP."
 msgstr ""
-"Nenhum plano de fundo definido. Envie uma imagem ou vídeo chamado \"bg\" (ex: bg.jpg, "
-"bg.png, bg.mp4) para /www/luci-static/glass/background/ via SCP."
+"Nenhum plano de fundo definido. Envie uma imagem ou vídeo chamado \"bg\" "
+"(ex: bg.jpg, bg.png, bg.mp4) para /www/luci-static/glass/background/ via SCP."
 
 #: ucode/template/themes/glass/header.ut:201
 msgid "No password set!"
@@ -175,13 +184,18 @@ msgstr "Cor primária (modo claro)"
 msgid ""
 "Scales all text in the theme. Larger values improve readability on high-DPI "
 "displays."
-msgstr "Redimensiona todo o texto do tema. Valores maiores melhoram a legibilidade em telas de alta resolução."
+msgstr ""
+"Redimensiona todo o texto do tema. Valores maiores melhoram a legibilidade "
+"em telas de alta resolução."
 
 #: htdocs/luci-static/resources/view/system/glass.js:39
 msgid ""
 "Show live system stats (CPU, RAM, network, uptime) in the header. Disable to "
 "reduce resource usage on low-end devices."
-msgstr "Exiba estatísticas do sistema em tempo real (CPU, RAM, rede, uptime) no cabeçalho. Desative para reduzir o uso de recursos em dispositivos de baixo desempenho."
+msgstr ""
+"Exiba estatísticas do sistema em tempo real (CPU, RAM, rede, uptime) no "
+"cabeçalho. Desative para reduzir o uso de recursos em dispositivos de baixo "
+"desempenho."
 
 #: ucode/template/themes/glass/sysauth.ut:106
 msgid "Sign in to continue"
@@ -199,7 +213,9 @@ msgstr "Modo do tema"
 msgid ""
 "There is no password set on this router. Please configure a root password to "
 "protect the web interface."
-msgstr "Não há senha definida neste roteador. Configure uma senha root para proteger a interface web."
+msgstr ""
+"Não há senha definida neste roteador. Configure uma senha root para proteger "
+"a interface web."
 
 #: ucode/template/themes/glass/sysauth.ut:117
 msgid "Username"
@@ -208,13 +224,19 @@ msgstr "Nome de usuário"
 #: ucode/template/themes/glass/header.ut:212
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
-msgstr "Você deve habilitar JavaScript no navegador ou o LuCI não funcionará corretamente."
+msgstr ""
+"Você deve habilitar JavaScript no navegador ou o LuCI não funcionará "
+"corretamente."
 
 msgid "Wallpaper source"
 msgstr "Fonte do papel de parede"
 
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Selecione a fonte do papel de parede online. Cada fonte fornece diferentes estilos."
+msgid ""
+"Select online wallpaper source. Each source provides different styles of "
+"wallpapers."
+msgstr ""
+"Selecione a fonte do papel de parede online. Cada fonte fornece diferentes "
+"estilos."
 
 msgid "Picsum (Random photos)"
 msgstr "Picsum (Fotos aleatórias)"
@@ -225,29 +247,12 @@ msgstr "Iciba Daily (China)"
 msgid "Wallpaper count"
 msgstr "Quantidade de papéis de parede"
 
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Número de papéis de parede para exibir (4-16, padrão: 8). As alterações entram em vigor após atualizar a página."
-
-msgid "Next Batch"
-msgstr "Próximo lote"
-
-msgid "Wallpaper source"
-msgstr "Fonte do papel de parede"
-
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Selecione a fonte do papel de parede online. Cada fonte fornece diferentes estilos."
-
-msgid "Picsum (Random photos)"
-msgstr "Picsum (Fotos aleatórias)"
-
-msgid "Iciba Daily (China)"
-msgstr "Iciba Daily (China)"
-
-msgid "Wallpaper count"
-msgstr "Quantidade de papéis de parede"
-
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Número de papéis de parede para exibir (4-16, padrão: 8). As alterações entram em vigor após atualizar."
+msgid ""
+"Number of wallpapers to display (4-16, default: 8). Changes take effect "
+"after refreshing the page."
+msgstr ""
+"Número de papéis de parede para exibir (4-16, padrão: 8). As alterações "
+"entram em vigor após atualizar a página."
 
 msgid "Next Batch"
 msgstr "Próximo lote"

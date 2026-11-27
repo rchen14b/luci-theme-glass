@@ -244,8 +244,12 @@ msgstr ""
 msgid "Wallpaper source"
 msgstr "Fuente de fondo de pantalla"
 
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Seleccione la fuente de fondo de pantalla en línea. Cada fuente proporciona diferentes estilos."
+msgid ""
+"Select online wallpaper source. Each source provides different styles of "
+"wallpapers."
+msgstr ""
+"Seleccione la fuente de fondo de pantalla en línea. Cada fuente proporciona "
+"diferentes estilos."
 
 msgid "Picsum (Random photos)"
 msgstr "Picsum (Fotos aleatorias)"
@@ -256,29 +260,12 @@ msgstr "Iciba Daily (China)"
 msgid "Wallpaper count"
 msgstr "Cantidad de fondos de pantalla"
 
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Número de fondos de pantalla para mostrar (4-16, predeterminado: 8). Los cambios surten efecto después de actualizar la página."
-
-msgid "Next Batch"
-msgstr "Siguiente lote"
-
-msgid "Wallpaper source"
-msgstr "Fuente de fondo de pantalla"
-
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Seleccione la fuente de fondo de pantalla en línea. Cada fuente proporciona diferentes estilos."
-
-msgid "Picsum (Random photos)"
-msgstr "Picsum (Fotos aleatorias)"
-
-msgid "Iciba Daily (China)"
-msgstr "Iciba Daily (China)"
-
-msgid "Wallpaper count"
-msgstr "Cantidad de fondos de pantalla"
-
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Número de fondos de pantalla para mostrar (4-16, predeterminado: 8). Los cambios surten efecto después de actualizar."
+msgid ""
+"Number of wallpapers to display (4-16, default: 8). Changes take effect "
+"after refreshing the page."
+msgstr ""
+"Número de fondos de pantalla para mostrar (4-16, predeterminado: 8). Los "
+"cambios surten efecto después de actualizar la página."
 
 msgid "Next Batch"
 msgstr "Siguiente lote"

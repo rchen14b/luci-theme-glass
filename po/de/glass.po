@@ -10,7 +10,8 @@ msgstr "Akzentfarben"
 
 #: htdocs/luci-static/resources/view/system/glass.js:72
 msgid "Accent color used for active elements, links, and buttons in dark mode."
-msgstr "Akzentfarbe für aktive Elemente, Links und Schaltflächen im Dunkelmodus."
+msgstr ""
+"Akzentfarbe für aktive Elemente, Links und Schaltflächen im Dunkelmodus."
 
 #: htdocs/luci-static/resources/view/system/glass.js:56
 msgid ""
@@ -33,7 +34,9 @@ msgstr "Hintergrundweichzeichner-Radius für Glasfelder im Dunkelmodus."
 msgid ""
 "Backdrop blur radius for glass panels. Higher values create a more frosted "
 "appearance."
-msgstr "Hintergrundweichzeichner-Radius für Glasfelder. Höhere Werte erzeugen einen stärkeren Mattglas-Effekt."
+msgstr ""
+"Hintergrundweichzeichner-Radius für Glasfelder. Höhere Werte erzeugen einen "
+"stärkeren Mattglas-Effekt."
 
 #: htdocs/luci-static/resources/view/system/glass.js:120
 msgid "Background"
@@ -42,13 +45,17 @@ msgstr "Hintergrund"
 #: htdocs/luci-static/resources/view/system/glass.js:98
 msgid ""
 "Background opacity of glass panels (0 = fully transparent, 1 = fully opaque)."
-msgstr "Hintergrunddeckkraft der Glasfelder (0 = vollständig transparent, 1 = vollständig undurchsichtig)."
+msgstr ""
+"Hintergrunddeckkraft der Glasfelder (0 = vollständig transparent, 1 = "
+"vollständig undurchsichtig)."
 
 #: htdocs/luci-static/resources/view/system/glass.js:114
 msgid ""
 "Background opacity of glass panels in dark mode (0 = fully transparent, 1 = "
 "fully opaque)."
-msgstr "Hintergrunddeckkraft der Glasfelder im Dunkelmodus (0 = vollständig transparent, 1 = vollständig undurchsichtig)."
+msgstr ""
+"Hintergrunddeckkraft der Glasfelder im Dunkelmodus (0 = vollständig "
+"transparent, 1 = vollständig undurchsichtig)."
 
 #: htdocs/luci-static/resources/view/system/glass.js:43
 msgid "Base font size"
@@ -63,12 +70,16 @@ msgstr "Weichzeichnerstärke (px)"
 msgid ""
 "Configure the appearance of the Glass theme. Changes take effect after "
 "saving and refreshing the page."
-msgstr "Erscheinungsbild des Glass-Themes konfigurieren. Änderungen werden nach dem Speichern und Aktualisieren wirksam."
+msgstr ""
+"Erscheinungsbild des Glass-Themes konfigurieren. Änderungen werden nach dem "
+"Speichern und Aktualisieren wirksam."
 
 #: htdocs/luci-static/resources/view/system/glass.js:32
 msgid ""
 "Controls the overall appearance. \"Normal\" follows the system preference."
-msgstr "Steuert das allgemeine Erscheinungsbild. »Auto« folgt den Systemeinstellungen."
+msgstr ""
+"Steuert das allgemeine Erscheinungsbild. »Auto« folgt den "
+"Systemeinstellungen."
 
 #: htdocs/luci-static/resources/view/system/glass.js:123
 msgid "Current background"
@@ -116,7 +127,8 @@ msgstr "Statusleiste im Header"
 
 #: ucode/template/themes/glass/sysauth.ut:111
 msgid "Invalid username and/or password! Please try again."
-msgstr "Ungültiger Benutzername oder falsches Passwort! Bitte erneut versuchen."
+msgstr ""
+"Ungültiger Benutzername oder falsches Passwort! Bitte erneut versuchen."
 
 #: ucode/template/themes/glass/header.ut:211
 msgid "JavaScript required!"
@@ -143,8 +155,9 @@ msgid ""
 "No background set. Upload an image or video named \"bg\" (e.g. bg.jpg, "
 "bg.png, bg.mp4) to /www/luci-static/glass/background/ via SCP."
 msgstr ""
-"Kein Hintergrund gesetzt. Laden Sie ein Bild oder Video namens \"bg\" (z. B. bg.jpg, "
-"bg.png, bg.mp4) über SCP nach /www/luci-static/glass/background/ hoch."
+"Kein Hintergrund gesetzt. Laden Sie ein Bild oder Video namens \"bg\" (z. B. "
+"bg.jpg, bg.png, bg.mp4) über SCP nach /www/luci-static/glass/background/ "
+"hoch."
 
 #: ucode/template/themes/glass/header.ut:201
 msgid "No password set!"
@@ -175,13 +188,18 @@ msgstr "Primärfarbe (Hellmodus)"
 msgid ""
 "Scales all text in the theme. Larger values improve readability on high-DPI "
 "displays."
-msgstr "Skaliert den gesamten Text des Themes. Höhere Werte verbessern die Lesbarkeit auf HiDPI-Displays."
+msgstr ""
+"Skaliert den gesamten Text des Themes. Höhere Werte verbessern die "
+"Lesbarkeit auf HiDPI-Displays."
 
 #: htdocs/luci-static/resources/view/system/glass.js:39
 msgid ""
 "Show live system stats (CPU, RAM, network, uptime) in the header. Disable to "
 "reduce resource usage on low-end devices."
-msgstr "Live-Systemstatistiken (CPU, RAM, Netzwerk, Betriebszeit) im Header anzeigen. Deaktivieren, um die Ressourcennutzung auf schwachen Geräten zu reduzieren."
+msgstr ""
+"Live-Systemstatistiken (CPU, RAM, Netzwerk, Betriebszeit) im Header "
+"anzeigen. Deaktivieren, um die Ressourcennutzung auf schwachen Geräten zu "
+"reduzieren."
 
 #: ucode/template/themes/glass/sysauth.ut:106
 msgid "Sign in to continue"
@@ -199,7 +217,9 @@ msgstr "Theme-Modus"
 msgid ""
 "There is no password set on this router. Please configure a root password to "
 "protect the web interface."
-msgstr "Auf diesem Router ist kein Passwort gesetzt. Bitte legen Sie ein Root-Passwort fest, um die Weboberfläche zu schützen."
+msgstr ""
+"Auf diesem Router ist kein Passwort gesetzt. Bitte legen Sie ein Root-"
+"Passwort fest, um die Weboberfläche zu schützen."
 
 #: ucode/template/themes/glass/sysauth.ut:117
 msgid "Username"
@@ -208,13 +228,19 @@ msgstr "Benutzername"
 #: ucode/template/themes/glass/header.ut:212
 msgid ""
 "You must enable JavaScript in your browser or LuCI will not work properly."
-msgstr "JavaScript muss im Browser aktiviert sein, sonst funktioniert LuCI nicht ordnungsgemäß."
+msgstr ""
+"JavaScript muss im Browser aktiviert sein, sonst funktioniert LuCI nicht "
+"ordnungsgemäß."
 
 msgid "Wallpaper source"
 msgstr "Hintergrundbild-Quelle"
 
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Wählen Sie eine Online-Hintergrundbildquelle. Jede Quelle bietet verschiedene Stile."
+msgid ""
+"Select online wallpaper source. Each source provides different styles of "
+"wallpapers."
+msgstr ""
+"Wählen Sie eine Online-Hintergrundbildquelle. Jede Quelle bietet "
+"verschiedene Stile."
 
 msgid "Picsum (Random photos)"
 msgstr "Picsum (Zufällige Fotos)"
@@ -225,29 +251,12 @@ msgstr "Iciba Daily (China)"
 msgid "Wallpaper count"
 msgstr "Anzahl der Hintergrundbilder"
 
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Anzahl der anzuzeigenden Hintergrundbilder (4-16, Standard: 8). Änderungen werden nach dem Aktualisieren der Seite wirksam."
-
-msgid "Next Batch"
-msgstr "Nächste Stapel"
-
-msgid "Wallpaper source"
-msgstr "Hintergrundbild-Quelle"
-
-msgid "Select online wallpaper source. Each source provides different styles of wallpapers."
-msgstr "Wählen Sie eine Online-Hintergrundbildquelle. Jede Quelle bietet verschiedene Stile."
-
-msgid "Picsum (Random photos)"
-msgstr "Picsum (Zufällige Fotos)"
-
-msgid "Iciba Daily (China)"
-msgstr "Iciba Daily (China)"
-
-msgid "Wallpaper count"
-msgstr "Anzahl der Hintergrundbilder"
-
-msgid "Number of wallpapers to display (4-16, default: 8). Changes take effect after refreshing the page."
-msgstr "Anzahl der anzuzeigenden Hintergrundbilder (4-16, Standard: 8). Änderungen werden nach dem Aktualisieren wirksam."
+msgid ""
+"Number of wallpapers to display (4-16, default: 8). Changes take effect "
+"after refreshing the page."
+msgstr ""
+"Anzahl der anzuzeigenden Hintergrundbilder (4-16, Standard: 8). Änderungen "
+"werden nach dem Aktualisieren der Seite wirksam."
 
 msgid "Next Batch"
 msgstr "Nächste Stapel"
