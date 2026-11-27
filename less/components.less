@@ -1165,3 +1165,14 @@ body.modal-overlay-active #modal_overlay {
   gap: 8px;
   justify-content: flex-end;
 }
+
+/* Selected-item checkboxes are only meaningful in the open list;
+   hide them in the collapsed display row, and let row clicks pass
+   through the checkbox in the open list (#13) */
+.cbi-dropdown ul:not(.dropdown) li input[type="checkbox"] {
+  display: none;
+}
+
+.cbi-dropdown[open] li input[type="checkbox"] {
+  pointer-events: none;
+}

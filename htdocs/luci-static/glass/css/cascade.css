@@ -1514,6 +1514,12 @@ table.cbi-section-table .tr:hover .td {
   color: var(--color-text-tertiary);
   font-style: italic;
 }
+.cbi-dropdown ul:not(.dropdown) li input[type="checkbox"] {
+  display: none;
+}
+.cbi-dropdown[open] li input[type="checkbox"] {
+  pointer-events: none;
+}
 .cbi-dropdown > .more,
 .cbi-dropdown > .open {
   flex-shrink: 0;
