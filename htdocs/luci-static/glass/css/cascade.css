@@ -2072,6 +2072,7 @@ body.modal-overlay-active #modal_overlay {
 @media (max-width: 1024px) {
   #sidebar {
     transform: translateX(calc(-100% - var(--sidebar-gap)));
+    z-index: calc(var(--z-header) + 1);
   }
   #sidebar.open {
     transform: translateX(0);
