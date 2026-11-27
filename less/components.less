@@ -948,6 +948,14 @@ table.cbi-section-table {
     font-weight: var(--font-weight-semibold);
     color: var(--color-text);
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.60);
+    white-space: nowrap;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .cbi-progressbar::after {
+    font-size: 0.65rem;
   }
 }
 
