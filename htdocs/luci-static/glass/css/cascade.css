@@ -2216,6 +2216,17 @@ body.modal-overlay-active #modal_overlay {
 .ifacebox-body > div {
   margin-top: var(--space-sm);
 }
+/* ---- Network → Interfaces: center device icons, vertically center the
+   parenthesised bridge-port icon groups ---- */
+.cbi-section-table .ifacebox-body {
+  text-align: center;
+}
+.cbi-section-table .ifacebox-body > span {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
 /* ---- Port status grid (29_ports.js) ---- */
 div[style*="display:grid;grid-template-columns:repeat"] {
   gap: var(--space-md) !important;
